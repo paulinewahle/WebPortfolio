@@ -8,7 +8,11 @@ import { mergeWithCustomize } from 'webpack-merge';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+
+
 import Cursor from './Cursor.vue';
+
+
 
 
 export default{
@@ -20,7 +24,7 @@ export default{
     //Loading
     const textureLoader = new THREE.TextureLoader()
 
-    const normalTexture = textureLoader.load('src/assets/textures/NormalMap.png')
+    //const normalTexture = textureLoader.load('src/assets/textures/NormalMap.png')
 
     // Debug
     //const gui = new dat.GUI()
@@ -105,8 +109,8 @@ export default{
     scene.add(camera)
 
     // Controls
-    const controls = new OrbitControls(camera, canvas)
-    controls.enableDamping = true
+    // const controls = new OrbitControls(camera, canvas)
+    // controls.enableDamping = true
 
     //Renderer
     const renderer = new THREE.WebGLRenderer({
@@ -151,8 +155,21 @@ export default{
         window.requestAnimationFrame(tick)
     }
     tick()
+
+
     ////////
     gsap.registerPlugin(ScrollTrigger); 
+
+   gsap.to(".webgl", {
+    scrollTrigger: {
+        trigger: ".navView",
+        markers: true,
+        start: "center bottom",
+        toggleActions: "restart pause reverse none"
+    },
+    scale: 4,
+    duration: 4
+   })
    }
    
 
@@ -165,7 +182,8 @@ export default{
 <template>
  
 <body>
-    <span id="scrollProgress"></span>
+    
+
     <main>
         <canvas class="webgl"></canvas>
     </main>
@@ -191,6 +209,7 @@ body{
     left: 0;
     outline: none;
 }
+
 
 
 </style>

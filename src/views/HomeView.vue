@@ -30,12 +30,13 @@ export default{
 <template>
 
   <body>
-    <Transition name="fade">
+    <!-- <Transition name="fade">
       <LoadingScreen v-if="isLoading == true"/>
-    </Transition>
+    </Transition> -->
     <Header></Header>
     <main>
-        
+    <div class="homeView startView">
+      
         <pre><h1>
 Design & 
     Development
@@ -44,9 +45,20 @@ Design &
       
         <!-- <button class="link" id="scrollbutton">scroll</button>
         <button v-on:click="greet">hover</button> -->
+    </div>
+    <div class="homeView navView">
+      
+      <router-link to="/work">
+        work
+      </router-link>
+      <router-link to="/work">
+        about
+      </router-link>
+    </div>
     </main>
     <Sphere />
-    
+   
+
   </body>
 
 </template>
@@ -55,10 +67,16 @@ Design &
 @media (min-width: 1024px) {
 
     body{
-      position: fixed;
-      height: 100vh;
+      width: 100vw;
     }
     main{
+      width: 100vw;
+      height: 200vh;
+      display: flex;
+      flex-direction: column;
+      overflow-y: scroll;
+    }
+    .homeView{
       height: 100vh;
       width: 100vw;
       padding: 0;
@@ -67,6 +85,8 @@ Design &
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      border: 1px solid blueviolet;
+      overflow-y: scroll;
     }
     h1{
       font-size: 12rem;
@@ -74,6 +94,9 @@ Design &
       line-height: 1em;
       margin: 0;
       font-style: italic;
+      position: fixed;
+      top: 1vh;
+      right: 10vw;
     }
     #scrollbutton{
       /* border: none; */
@@ -85,5 +108,6 @@ Design &
   .link{
       border: 1px solid red;
   }
+ 
 }  
 </style>
