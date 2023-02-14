@@ -1,12 +1,12 @@
 <script lang>
-
+import CaseNav from '../components/CaseNav.vue'
 
 export default {
   props:{
     sideNav: Array,
-    caseNav: Array
   },
   components: {
+    CaseNav
   },
   data() {
     return {
@@ -21,7 +21,7 @@ export default {
       img2: "url('src/assets/cases/concreate/Zine2.jpg')",
       img21: "url('src/assets/cases/concreate/Zine2.1.jpg')",
       img3: "url('src/assets/cases/concreate/Zine3.jpg')",
-      img31: "url('src/assets/cases/concreate/Zine3.1.png')",
+      img31: "url('src/assets/cases/concreate/Zine3.1.jpg')",
       img4: "url('src/assets/cases/concreate/Zine4.jpg')",
       img5: "url('src/assets/cases/concreate/Zine5.jpg')",
       img6: "url('src/assets/cases/concreate/Zine6.jpg')",
@@ -116,7 +116,6 @@ export default {
     </Transition>
     
     
-    
     <div id="page-numbers">
       <button @click="show2 = false; show3 = false; show4 = false; show5 = false; show6 = false; show7 = false; show1 = true;" id="page-number-1">1</button>
       <button @click="show1 = false; show3 = false; show4 = false; show5 = false; show6 = false; show7 = false; show2 = true;" id="page-number-2">2</button>
@@ -190,31 +189,27 @@ export default {
   }
   /* Page Numbers */
   #page-numbers{
-  height: 100vh;
-  width: 20vw;
-  padding-bottom: 8vh;
-  box-sizing: border-box;
   position: fixed;
-  display: flex;
-  align-items: flex-end;
+  top: 93vh;
+  width: 20vw;
+  box-sizing: border-box;
+
   z-index: 200;
   margin-left: 75vw;
 }
 
 #page-numbers button{
+  font-family: 'Right Sans Light';
   font-size: 1.5rem;
-  font-weight: 200;
   color: #262626;
   border: none;
-  margin: 0 5%;
-  transition: margin 1s ease;
-}
-#page-numbers button:hover{
-  font-style: oblique;
   
+  transition: margin 1s ease;
+  font-style: oblique;
 }
-
-
+#page-numbers button:hover, button:focus{
+  margin: 0 .9em 0 0;
+}
 
   #about-me, #about-my{
     display: block;

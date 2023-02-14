@@ -5,6 +5,7 @@ import Sphere from './components/Sphere.vue'
 import LoadingScreen from './components/LoadingScreen.vue'
 import Cursor from './components/Cursor.vue'
 import SideNav from './components/SideNav.vue'
+import CaseNav from './components/CaseNav.vue'
 import HomeView from './views/HomeView.vue'
 
 export default {
@@ -12,6 +13,7 @@ export default {
 	components: {
     Cursor,
     SideNav,
+    CaseNav,
     HomeView,
     WorkView
 },
@@ -36,6 +38,7 @@ export default {
         <!-- <SideNav :links="links" v-if="this.sideNav.length === 1" /> -->
 
         <SideNav :links="links"/>
+        
         <!-- <SideNav  /> -->
         <Cursor :links="links"/>
 
