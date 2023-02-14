@@ -22,6 +22,7 @@ export default {
         }
     },
     mounted(){
+        
     }
 }
 
@@ -33,17 +34,8 @@ export default {
         
 
         <!-- consitional rendering deactivated maouse effect -->
-        <!-- <div v-if="this.sideNav.length == 1"> -->
-        <SideNav :links="links"> </SideNav>
-        <!-- </div> -->
-
-        <Cursor :links="links"></Cursor>
-
-        <!-- <router-view v-slot="{ HomeView }">
-        <transition>
-            <component :is="HomeView" />
-        </transition>
-        </router-view> -->
+        <SideNav :links="links" v-if="this.sideNav.length == 1" />
+        <Cursor :links="links"/>
 
         <Transition name="slide-fade">
         <RouterView :sideNav="sideNav">

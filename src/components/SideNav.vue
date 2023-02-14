@@ -4,9 +4,7 @@
         links: Array
       },
       mounted(){
-        let hoverLink = document.querySelector(".link")
-        this.links.push(hoverLink)
-        console.log(this.links)
+        this.links.push(document.querySelector(".link"))
       }
       
     }
