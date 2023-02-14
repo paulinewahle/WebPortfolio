@@ -1,10 +1,12 @@
 <script>
     export default{
       props:{
-        links: Array
+        links: Array,
+        sideNav: Array
       },
       mounted(){
         this.links.push(document.querySelector(".link"))
+        
       }
       
     }

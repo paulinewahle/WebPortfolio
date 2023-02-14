@@ -32,7 +32,6 @@ export default {
   },
   mounted(){
     this.sideNav.push("showSideNav")
-    
   },
   methods:{
     pageNumberStyle: function(){

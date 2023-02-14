@@ -31,10 +31,12 @@ export default {
 <template>
     
     <body>
-        
 
         <!-- consitional rendering deactivated maouse effect -->
-        <SideNav :links="links" v-if="this.sideNav.length == 1" />
+        <!-- <SideNav :links="links" v-if="this.sideNav.length === 1" /> -->
+
+        <SideNav :links="links"/>
+        <!-- <SideNav  /> -->
         <Cursor :links="links"/>
 
         <Transition name="slide-fade">

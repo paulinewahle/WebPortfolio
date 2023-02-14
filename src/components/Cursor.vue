@@ -34,7 +34,7 @@ export default{
         // function hoverLink(){
         //     console.log("in")
         // }
-        console.log(this.links.length)
+        console.log(this.links)
         this.links.forEach((link) => {
         link.addEventListener("mouseleave", () => {
             blob.style.scale = 0;
@@ -53,48 +53,7 @@ export default{
         });
         });
     },
-    // methods: {
-    // function (){
-    //     
-    // }
-    
-    // },
-    // methods: {
-    //     hover: function(){
-    //         this.links.addEventListener("mouseleave", () => {
-    //         console.log("out")
-    //     });
-    //     this.links.addEventListener("mouseover", () => {
-    //         console.log("in")
-    //     });
-    //     }
-
-    // }
-    // data(){
-    //     return{
-    //         links: [],
-    //     }
-    // },
-
- 
-    // methods: {
-    //     linkIN: function(){
-    //         console.log("hi");
-    //         blob.style.scale = 8;
-    //         blob.style.filter = "blur(1px)";
-    //         mouseCursor.style.mixBlendMode = "difference";
-    //     },
-    //     linkOUT: function(){
-    //         link.addEventListener("mouseleave", () => {
-    //         blob.style.scale = 0;
-    //         blob.style.filter = "blur(0px)";
-    //         mouseCursor.style.scale = 1;
-    //         mouseCursor.style.mixBlendMode = "difference";
-    //     });
-    //     }, 
-    // }
-    
-    // }
+  
 }
 </script>
 
