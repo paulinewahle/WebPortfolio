@@ -23,10 +23,10 @@ export default{
         let rightScreen = window.screen.width/2
         let leftScreen = window.screen.width/2
         if(e.pageX < rightScreen){
-            //console.log("left")
+            console.log("left")
         }
         else if(e.screenX > leftScreen){
-            //console.log("right")
+            console.log("right")
         }
         }
        

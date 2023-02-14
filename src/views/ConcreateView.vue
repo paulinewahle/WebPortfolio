@@ -34,19 +34,6 @@ export default {
     this.sideNav.push("showSideNav")
   },
   methods:{
-    pageNumberStyle: function(){
-    console.log(this.show)
-    if(this.show0 === true){
-      document.querySelector("#page-number-0").style.fontStyle= "oblique";
-      document.querySelector("#page-number-0").style.fontWeight= "700";
-      document.querySelector("#page-number-0").style.border= "1px solid red";
-    }
-    else if(this.show1 === true){
-      document.querySelector("#page-number-0").style.fontStyle= "normal";
-      document.querySelector("#page-number-0").style.margin= "0 0 0 5%";
-      document.querySelector("#page-number-0").style.border= "1px solid yellow";
-    }
-    }
     
      
       
@@ -204,47 +191,20 @@ export default {
   font-size: 1.5rem;
   color: #262626;
   border: none;
-  
-  transition: margin 1s ease;
+  transition: all 1s ease;
   font-style: oblique;
 }
-#page-numbers button:hover, button:focus{
+#page-numbers button:hover{
   margin: 0 .9em 0 0;
 }
+button:focus::after{
+  content: "";
+  padding: 0 1.2em;
+  margin: 10%;
+  margin-top: -5px;
+  border-bottom: 1px solid;
+}
 
-  #about-me, #about-my{
-    display: block;
-    height: 80vh;
-    width: 20vw;
-    box-sizing: border-box;
-
-  }
-  #about-me{
-    padding-right: 2.5vw;
-
-  }
-  #about-my{
-    padding-left: 2.5vw;
-  }
-  #links-wrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 60vh;
-  }
-  .about-link{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .line{
-    border-bottom: 1px solid #262626;
-    display: inline-block;
-    margin: 0 10% 0 0 ;
-    height: .9rem;
-    transition: width .3s ease;
-  }
   
 }
 
