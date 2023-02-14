@@ -133,6 +133,7 @@ export default {
 
 <style scoped>
 @media (min-width: 1024px) {
+  
 
 /* General */
   body{

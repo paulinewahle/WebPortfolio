@@ -6,7 +6,6 @@
       },
       mounted(){
         this.links.push(document.querySelector(".link"))
-        
       }
       
     }

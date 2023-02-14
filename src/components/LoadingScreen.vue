@@ -20,13 +20,12 @@ export default {
         item.style.display = "none"
       }, 1900)
 
-      if (id>=5){
+      if (id>=6){
       clearInterval(loadingInterval)
       }
     }
     
-    
-    
+  
     
   }
 }
@@ -37,19 +36,22 @@ export default {
     <div id="loading">
       <ul>
         <li class="intro-loop-item" id="intro-loop-item1">
-          Design Concepts
+          <span class="a">Design</span> <span class="b">Concepts</span>
         </li>
         <li class="intro-loop-item" id="intro-loop-item2">
-          Web Development
+          <span class="b">Creative</span> <span class="a">Development</span>
         </li>
         <li class="intro-loop-item" id="intro-loop-item3">
-          Creative Content
+          <span class="a">Web</span> <span class="b">Design</span>
         </li>
         <li class="intro-loop-item" id="intro-loop-item4">
-          Usability Strategy
+          <span class="b">User</span> <span class="a">Experience</span>
         </li>
         <li class="intro-loop-item" id="intro-loop-item5">
-          Digital Experience
+          <span class="a">Graphic</span> <span class="b">Design</span>
+        </li>
+        <li class="intro-loop-item" id="intro-loop-item6">
+          <span class="b">Digital</span> <span class="a">Interfaces</span>
         </li>
       </ul>
     </div>
@@ -93,5 +95,12 @@ export default {
       filter: blur(5px);
       opacity: 0;
     }
+  }
+  .a{
+    font-family: "Brigade", sans-serif;
+  }
+  .b{
+    font-family: "Right Sans Light", sans-serif;
+    font-style: italic;
   }
   </style>
