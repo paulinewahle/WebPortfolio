@@ -20,10 +20,8 @@
   #page-numbers button:hover{
     margin: 0 .9em 0 0;
   }
-  button:focus::after{
-    content: "";
+  button:focus{
+    
     padding: 0 1.2em;
-    margin: 10%;
-    margin-top: -5px;
-    border-bottom: 1px solid;
+    
   }
