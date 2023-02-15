@@ -1,15 +1,16 @@
 <script>
 import HorizontalScroll from 'vue-horizontal-scroll'
 import 'vue-horizontal-scroll/dist/vue-horizontal-scroll.css'
-import Nav from '../components/SideNav.vue';
+import SideNav from '../components/SideNav.vue'
+import PageNumberStyle from '../assets/pagenumbers.css'
 
 export default {
   props:{
-    sideNav: Array
+    sideNav: Array,
   },
   components: {
       HorizontalScroll, 
-      Nav
+      SideNav
   },
   data() {
     return {
@@ -19,7 +20,7 @@ export default {
       width2: "40%",
       width3: "40%",
       width4: "40%",
-
+      PageNumberStyle
     }
   },
   mounted(){
@@ -174,9 +175,9 @@ export default {
   /* Profile Image Animation */
   #profile-img{
     box-sizing: border-box;
-    margin-left: -10vw;
+    margin-left: 10vw;
     height: 100vh;
-    width: 40vw;
+    width: 35vw;
     background-image: url("src/assets/img/profile.jpg");
     background-position: center center;
     background-size: cover;
@@ -191,13 +192,7 @@ export default {
     transform: scale(1.5, 1.5);
     transform-origin: top left;
   }
-  #blobSvg2{
-    margin-top: 10vh;
-    filter: blur(0px);
-    transform: scale(.5, .5);
-    transform-origin: bottom right;
-    outline: 30px solid red;
-  }
+
 
   h1{
     line-height: .8em;
@@ -227,31 +222,7 @@ export default {
   a:hover{
     font-style: italic;
   }
-  /* Page Numbers */
-  #page-numbers{
-  height: 100vh;
-  width: 20vw;
-  padding-bottom: 10vh;
-  box-sizing: border-box;
-  position: fixed;
-  display: flex;
-  align-items: flex-end;
-  z-index: 200;
-  margin-left: 85vw;
-}
 
-#page-numbers button{
-  font-size: 1.5rem;
-  font-weight: 200;
-  color: #262626;
-  border: none;
-  margin: 0 5%;
-  transition: margin 1s ease;
-}
-#page-numbers button:hover{
-  font-style: oblique;
-  
-}
 
 #page2{
     position: absolute;

@@ -118,7 +118,7 @@ export default{
         transition: all 0.3s ease-in-out;
         transition-property: scale, filter, transform;
     }
-  
+
     .text-cursor{
         display: none;
         height: 70px;

@@ -1,5 +1,6 @@
 <script lang>
 import CaseNav from '../components/CaseNav.vue'
+import PageNumberStyle from '../assets/pagenumbers.css'
 
 export default {
   props:{
@@ -175,35 +176,7 @@ export default {
     width: 20vw;
     margin-left: 1vw;
   }
-  /* Page Numbers */
-  #page-numbers{
-  position: fixed;
-  top: 93vh;
-  width: 20vw;
-  box-sizing: border-box;
 
-  z-index: 200;
-  margin-left: 75vw;
-}
-
-#page-numbers button{
-  font-family: 'Right Sans Light';
-  font-size: 1.5rem;
-  color: #262626;
-  border: none;
-  transition: all 1s ease;
-  font-style: oblique;
-}
-#page-numbers button:hover{
-  margin: 0 .9em 0 0;
-}
-button:focus::after{
-  content: "";
-  padding: 0 1.2em;
-  margin: 10%;
-  margin-top: -5px;
-  border-bottom: 1px solid;
-}
 
   
 }
