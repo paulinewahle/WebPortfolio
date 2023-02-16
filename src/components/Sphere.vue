@@ -10,166 +10,186 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 
 
-import Cursor from './Cursor.vue';
-
-
-
 
 export default{
-    components: {
-        Cursor
-    },
+
    mounted(){
-    const hdrTextureURL = new URL('../assets/surfaces/Untitled-1.hdr', import.meta.url);
-    //Loading
-    const textureLoader = new THREE.TextureLoader()
-
-    //const normalTexture = textureLoader.load('src/assets/textures/NormalMap.png')
-
-    // Debug
-    //const gui = new dat.GUI()
-
-    // Canvas
-    const canvas = document.querySelector('canvas.webgl')
-
-    // Scene
-    const scene = new THREE.Scene()
-
-
-    // Objects
-    const geometry = new THREE.SphereGeometry( 1.1, 64, 64 );
-
-
-    // Materials
-    const material = new THREE.MeshPhysicalMaterial({
-        color: new THREE.Color(0xffffff),
-        //emissive: new THREE.Color(0x707070),
-        //wireframe: true,
-        metalness: 1,
-        roughness: 0,
-        envMapIntensity: 0.9,
-        clearcoat: 1,
-        clearcoatRoughness: 0,
-        transparent: true,
-        //transmission: .95,
-        opacity: .9,
-        reflectivity: 0.9,
-        //refractionRatio: 0.985,
-        //ior: 0.9,
-        // normalMap: normalTexture
-    })
-
-    // Mesh
-    const sphere = new THREE.Mesh( geometry, material );
-    scene.add(sphere)
-
-
-    // Lights
     
-    const light = new THREE.DirectionalLight(0xffffff, 1.5);
-    light.position.set(5, 5, 10);
-    light.target.position.set(-5, 0, 0);
-    scene.add(light);
-    scene.add(light.target);
     
 
-    // const pointLight = new THREE.PointLight(0xffffff, 1)
-    // pointLight.position.x = 2
-    // pointLight.position.y = 3
-    // pointLight.position.z = 4
-    // scene.add(pointLight)
+   
+        const hdrTextureURL = new URL('../assets/surfaces/Untitled-1.hdr', import.meta.url);
+        //Loading
+        const textureLoader = new THREE.TextureLoader()
 
-   //Sizes
-    const sizes = {
-        width: window.innerWidth,
-        height: window.innerHeight
-    }
+        const normalTexture = textureLoader.load('src/assets/textures/Options/NormalMap.png')
 
-    window.addEventListener('resize', () =>
-    {
-        // Update sizes
-        sizes.width = window.innerWidth
-        sizes.height = window.innerHeight
+        // Debug
+        //const gui = new dat.GUI()
 
-        // Update camera
-        camera.aspect = sizes.width / sizes.height
-        camera.updateProjectionMatrix()
+        // Canvas
+        const canvas = document.querySelector('canvas.webgl')
 
-        // Update renderer
+        // Scene
+        const scene = new THREE.Scene()
+
+        // Objects
+        const geometry = new THREE.SphereGeometry( 1.1, 64, 64 );
+
+        // Materials
+        const material = new THREE.MeshPhysicalMaterial({
+            color: new THREE.Color(0xffffff),
+            //emissive: new THREE.Color(0x707070),
+            //wireframe: true,
+            metalness: 1,
+            roughness: 0,
+            envMapIntensity: 0.9,
+            clearcoat: 1,
+            clearcoatRoughness: 0,
+            transparent: true,
+            //transmission: .95,
+            opacity: .9,
+            reflectivity: 0.9,
+            //refractionRatio: 0.985,
+            //ior: 0.9,
+            normalMap: normalTexture
+        })
+
+        // Mesh
+        const sphere = new THREE.Mesh( geometry, material );
+        scene.add(sphere)
+
+
+        // Lights
+        
+        const light = new THREE.DirectionalLight(0xffffff, 1.5);
+        light.position.set(5, 5, 10);
+        light.target.position.set(-5, 0, 0);
+        scene.add(light);
+        scene.add(light.target);
+        
+
+        // const pointLight = new THREE.PointLight(0xffffff, 1)
+        // pointLight.position.x = 2
+        // pointLight.position.y = 3
+        // pointLight.position.z = 4
+        // scene.add(pointLight)
+
+        //Sizes
+        const sizes = {
+            width: window.innerWidth,
+            height: window.innerHeight
+        }
+
+        window.addEventListener('resize', () =>
+        {
+            // Update sizes
+            sizes.width = window.innerWidth
+            sizes.height = window.innerHeight
+
+            // Update camera
+            camera.aspect = sizes.width / sizes.height
+            camera.updateProjectionMatrix()
+
+            // Update renderer
+            renderer.setSize(sizes.width, sizes.height)
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+        })
+
+        //Camera
+        // Base camera
+        const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
+        camera.position.x = 0
+        camera.position.y = 0
+        camera.position.z = 2
+        scene.add(camera)
+
+        // Controls
+        const controls = new OrbitControls(camera, canvas)
+        controls.enableDamping = true
+
+        //Renderer
+        const renderer = new THREE.WebGLRenderer({
+            canvas: canvas,
+            alpha: true
+        })
         renderer.setSize(sizes.width, sizes.height)
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-    })
 
-    //Camera
-    // Base camera
-    const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
-    camera.position.x = 0
-    camera.position.y = 0
-    camera.position.z = 2
-    scene.add(camera)
+        //hdr decoding
+        renderer.outputEncoding = THREE.sRGBEncoding;
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 1.8;
 
-    // Controls
-    // const controls = new OrbitControls(camera, canvas)
-    // controls.enableDamping = true
+        //RGBELoader
+        const loader = new RGBELoader();
+        loader.load(hdrTextureURL, function(texture){
+            texture.mapping = THREE. EquirectangularReflectionMapping;
+            //scene.background = texture;
+            scene.environment = texture;
 
-    //Renderer
-    const renderer = new THREE.WebGLRenderer({
-        canvas: canvas,
-        alpha: true
-    })
-    renderer.setSize(sizes.width, sizes.height)
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+        })
 
-    //hdr decoding
-    renderer.outputEncoding = THREE.sRGBEncoding;
-    renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.8;
+        //Animate
+        const clock = new THREE.Clock()
 
-    //RGBELoader
-    const loader = new RGBELoader();
-    loader.load(hdrTextureURL, function(texture){
-        texture.mapping = THREE. EquirectangularReflectionMapping;
-        //scene.background = texture;
-        scene.environment = texture;
-
-    })
-
-    //Animate
-    const clock = new THREE.Clock()
-
-    const tick = () =>
-    {
-
-        const elapsedTime = clock.getElapsedTime()
-
-        // Update objects
-        //sphere.rotation.y = .2 * elapsedTime
-
-        // Update Orbital Controls
-        //controls.update()
-
-        // Render
-        renderer.render(scene, camera)
-
-        // Call tick again on the next frame
-        window.requestAnimationFrame(tick)
-    }
-    tick()
+        
 
 
-    ////////
-    gsap.registerPlugin(ScrollTrigger); 
+        ////////
+        gsap.registerPlugin(ScrollTrigger); 
 
-   gsap.to(".webgl", {
-    scrollTrigger: {
-        trigger: ".navView",
-        markers: true,
-        start: "center bottom",
-        toggleActions: "restart pause reverse none"
-    },
-    scale: 4,
-    duration: 4
-   })
+        // gsap.to(".webgl", {
+        // scrollTrigger: {
+        //     trigger: ".navView",
+        //     markers: true,
+        //     start: "center bottom",
+        //     toggleActions: "restart pause reverse none"
+        // },
+        // scale: 4,
+        // duration: 4
+        // })
+        // .from('.carousel-caption .btn-primary',{ y: 20, opacity:0})
+        // .to('.carousel-caption .btn-primary',  {opacity: 0, x:  100, duration: 1})
+
+        gsap.to(sphere, {
+            scrollTrigger: {
+            trigger: ".homeView",
+            markers: true,
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+            toggleActions: "restart pause reverse none"
+        },
+            rotationY: Math.PI,
+            ease: ease,
+
+        });
+    
+
+        const tick = () =>
+        {
+
+            const elapsedTime = clock.getElapsedTime()
+
+            // Update objects
+            //sphere.rotation.y = .2 * elapsedTime
+
+            // Update Orbital Controls
+            controls.update()
+
+            // Render
+            renderer.render(scene, camera)
+
+            // Call tick again on the next frame
+            window.requestAnimationFrame(tick)
+        }
+        tick()
+
+        // requestAnimationFrame(animate);
+        // renderer.render(scene, camera);
+    
+ 
    }
    
 

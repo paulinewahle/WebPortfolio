@@ -30,9 +30,9 @@ export default{
 <template>
 
   <body>
-    <Transition name="fade">
+    <!-- <Transition name="fade">
       <LoadingScreen v-if="isLoading == true"/>
-    </Transition>
+    </Transition> -->
     <Header></Header>
     <main>
     <div class="homeView startView">
