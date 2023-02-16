@@ -48,7 +48,7 @@ export default{
             clearcoatRoughness: 0,
             transparent: true,
             //transmission: .95,
-            opacity: .9,
+            opacity: .7,
             reflectivity: 0.9,
             //refractionRatio: 0.985,
             //ior: 0.9,
@@ -105,8 +105,8 @@ export default{
         scene.add(camera)
 
         // Controls
-        const controls = new OrbitControls(camera, canvas)
-        controls.enableDamping = true
+        // const controls = new OrbitControls(camera, canvas)
+        // controls.enableDamping = true
 
         //Renderer
         const renderer = new THREE.WebGLRenderer({
@@ -139,31 +139,38 @@ export default{
         ////////
         gsap.registerPlugin(ScrollTrigger); 
 
-        // gsap.to(".webgl", {
-        // scrollTrigger: {
-        //     trigger: ".navView",
+        
+        // gsap.from(sphere,{
+      
+        //      rotationY: Math.PI,
+        //     })
+        // gsap.to(sphere,{
+        //     scrollTrigger: {
+        //     trigger: ".homeView",
         //     markers: true,
-        //     start: "center bottom",
+        //     start: "top top",
+        //     end: "bottom top",
+        //     scrub: true,
         //     toggleActions: "restart pause reverse none"
         // },
-        // scale: 4,
-        // duration: 4
+        //     rotationY: Math.PI,
         // })
-        // .from('.carousel-caption .btn-primary',{ y: 20, opacity:0})
+            
         // .to('.carousel-caption .btn-primary',  {opacity: 0, x:  100, duration: 1})
 
-        gsap.to(sphere, {
+        gsap.to(sphere.material, {
             scrollTrigger: {
-            trigger: ".homeView",
+            trigger: ".startView",
             markers: true,
             start: "top top",
             end: "bottom top",
+            duration: 2.5, 
+            yoyoEase: true,
             scrub: true,
             toggleActions: "restart pause reverse none"
         },
-            rotationY: Math.PI,
-            ease: ease,
 
+            opacity: 1
         });
     
 
@@ -173,10 +180,10 @@ export default{
             const elapsedTime = clock.getElapsedTime()
 
             // Update objects
-            //sphere.rotation.y = .2 * elapsedTime
+            sphere.rotation.y = .2 * elapsedTime
 
             // Update Orbital Controls
-            controls.update()
+            // controls.update()
 
             // Render
             renderer.render(scene, camera)
@@ -221,13 +228,13 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
 }
 .webgl{
     position: fixed;
     top: 0;
     left: 0;
     outline: none;
+    z-index: 1000;
 }
 
 

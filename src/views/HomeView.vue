@@ -33,7 +33,7 @@ export default{
     <!-- <Transition name="fade">
       <LoadingScreen v-if="isLoading == true"/>
     </Transition> -->
-    <Header></Header>
+    <!-- <Header></Header> -->
     <main>
     <div class="homeView startView">
       
@@ -65,16 +65,13 @@ Design &
 
 <style scoped>
 @media (min-width: 1024px) {
-
     body{
       width: 100vw;
+      height: 200vh;
     }
     main{
-      width: 100vw;
-      height: 200vh;
-      display: flex;
-      flex-direction: column;
       overflow-y: scroll;
+      scroll-snap-type: both mandatory;
     }
     .homeView{
       height: 100vh;
@@ -87,6 +84,7 @@ Design &
       justify-content: center;
       border: 1px solid blueviolet;
       overflow-y: scroll;
+      scroll-snap-align: center;
     }
     h1{
       font-size: 12rem;
