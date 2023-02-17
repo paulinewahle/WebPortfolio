@@ -22,7 +22,7 @@ export default{
         //Loading
         const textureLoader = new THREE.TextureLoader()
 
-        const normalTexture = textureLoader.load('src/assets/textures/Options/NormalMap.png')
+        const normalTexture = textureLoader.load('src/assets/textures/Options/4655-normal.jpeg')
 
         // Debug
         //const gui = new dat.GUI()
