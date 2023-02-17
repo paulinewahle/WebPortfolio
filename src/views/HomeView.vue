@@ -43,15 +43,14 @@ Design &
               </h1>
         </pre>
       
-        <!-- <button class="link" id="scrollbutton">scroll</button>
-        <button v-on:click="greet">hover</button> -->
+        <a href="#navView" class="link" id="scrollbutton">scroll</a>
     </div>
-    <div class="homeView navView">
+    <div class="homeView" id="navView">
       
       <router-link to="/work">
         work
       </router-link>
-      <router-link to="/work">
+      <router-link to="/about">
         about
       </router-link>
     </div>
@@ -67,6 +66,7 @@ Design &
 @media (min-width: 1024px) {
     body{
       max-height: 200vh;
+      
     }
     main{
       scroll-snap-type: both mandatory;
@@ -78,8 +78,8 @@ Design &
       margin: 0;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      align-items: right;
+      justify-content: right;
       border: 1px solid blueviolet;
       scroll-snap-align: start;
     }
@@ -104,6 +104,11 @@ Design &
       border-bottom: 1px solid black;
       font-family: "Brigade", sans-serif;
       font-size: 1em;
+      text-align: end;
+      z-index: 500000;
+    }
+    #scrollbutton:hover{
+      background-color: yellow;
     }
   .link{
       border: 1px solid red;

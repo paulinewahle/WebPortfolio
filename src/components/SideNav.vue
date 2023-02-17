@@ -35,7 +35,7 @@
   <!-- </div> -->
 
     <div id="main-nav">
-    <router-link to="/" id="menu-button" class="link">
+    <router-link to="/#navView" id="menu-button" class="link">
       Menu
     </router-link> 
     <h3>

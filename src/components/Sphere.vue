@@ -133,7 +133,24 @@ export default{
         //Animate
         const clock = new THREE.Clock()
 
-        
+        const tick = () =>
+        {
+
+            const elapsedTime = clock.getElapsedTime()
+
+            // Update objects
+            //sphere.rotation.y = .22 * elapsedTime
+
+            // Update Orbital Controls
+            // controls.update()
+
+            // Render
+            renderer.render(scene, camera)
+
+            // Call tick again on the next frame
+            window.requestAnimationFrame(tick)
+        }
+        tick()
 
 
         ////////
@@ -180,24 +197,7 @@ export default{
         });
         
 
-        const tick = () =>
-        {
-
-            const elapsedTime = clock.getElapsedTime()
-
-            // Update objects
-            //sphere.rotation.y = .22 * elapsedTime
-
-            // Update Orbital Controls
-            // controls.update()
-
-            // Render
-            renderer.render(scene, camera)
-
-            // Call tick again on the next frame
-            window.requestAnimationFrame(tick)
-        }
-        tick()
+        
 
         // requestAnimationFrame(animate);
         // renderer.render(scene, camera);

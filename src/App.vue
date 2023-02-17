@@ -42,11 +42,11 @@ export default {
         <!-- <SideNav  /> -->
         <Cursor :links="links"/>
 
-        <Transition name="slide-fade">
+        <!-- <Transition name="slide-fade"> -->
         <RouterView :sideNav="sideNav">
            
         </RouterView>
-        </Transition>
+        <!-- </Transition> -->
         
     </body>
 </template>
