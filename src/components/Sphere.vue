@@ -49,11 +49,10 @@ export default{
             transparent: true,
             //transmission: .95,
             opacity: .7,
-            reflectivity: 0.9,
+            reflectivity: 0.1,
             //refractionRatio: 0.985,
             //ior: 0.9,
             normalMap: normalTexture,
-            displacement: 1,
         })
 
         // Mesh

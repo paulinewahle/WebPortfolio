@@ -1,78 +1,96 @@
-
-
 @font-face {
-    font-family: "Right Sans Light";
-    src: url('src/assets/fonts/PPRightSans-Light.otf')  format('opentype');
+  font-family: "serif";
+  @import url("https://use.typekit.net/zxi1huv.css");
+}
+@font-face {
+  font-family: "sans-serif";
+  src: url("src/assets/fonts/PPRightSans-Light.otf") format("opentype");
 }
 * {
-    color: #292929;
-    cursor: none;
-    -ms-overflow-style: none;  
-    scrollbar-width: none; 
-    scroll-behavior: smooth;
+  color: #292929;
+  cursor: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  font-family: "serif";
 }
-*::selection{
-    background-color: #292929;
-    color: #eeeeee;
+
+*::-moz-selection {
+  background-color: #292929;
+  color: #eeeeee;
 }
-*::-moz-selection{
-    background-color: #292929;
-    color: #eeeeee;
+
+*::selection {
+  background-color: #292929;
+  color: #eeeeee;
 }
-*::-o-selection{
-    background-color: #292929;
-    color: #eeeeee;
+
+*::-moz-selection {
+  background-color: #292929;
+  color: #eeeeee;
 }
-*::-ms-selection{
-    background-color: #292929;
-    color: #eeeeee;
+
+*::-o-selection {
+  background-color: #292929;
+  color: #eeeeee;
 }
-*::-webkit-selection{
-    background-color: #292929;
-    color: #eeeeee;
+
+*::-ms-selection {
+  background-color: #292929;
+  color: #eeeeee;
 }
+
+*::-webkit-selection {
+  background-color: #292929;
+  color: #eeeeee;
+}
+
 *::-webkit-scrollbar {
-    display: none;
-  }
-  body{
-    background-color: #eeeeee;
-    color: #292929;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    /* overflow-y: hidden; */
-}
-h1{
-    /*font-family: contralto-big, sans-serif;*/
-    font-family: 'Right Sans Light';
-    font-weight: 200;
-    margin: 0;
-    line-height: .8em;
-    font-size: 25rem;
-    z-index: 50;
-    font-style: italic;
-}
-h2{
-    font-family: "Brigade", sans-serif;
-    font-weight: 200;
-    font-size: 2rem;
-    margin: 0;
-}
-h3{
-    font-family: "Brigade", sans-serif;
-    font-weight: bold;
-    font-size: 1rem;
-    text-transform: uppercase;
-    color:#292929;
-}
-p{
-    font-family: "Brigade", sans-serif;
-    font-weight: 200;
-}
-button{
-    background: none;
-    font-family: "Brigade", sans-serif;
-    font-weight: 200;
+  display: none;
 }
 
+body {
+  background-color: #eeeeee;
+  color: #292929;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  /* overflow-y: hidden; */
+}
 
+h1 {
+  /*font-family: contralto-big, sans-serif;*/
+  font-family: "sans-serif";
+  font-weight: 200;
+  margin: 0;
+  line-height: 0.8em;
+  font-size: 25rem;
+  z-index: 50;
+  font-style: italic;
+}
+
+h2 {
+  font-family: "serif";
+  font-weight: 200;
+  font-size: 2rem;
+  margin: 0;
+}
+
+h3 {
+  font-family: "serif";
+  font-weight: bold;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: #292929;
+}
+
+p {
+  font-family: "serif";
+  font-weight: 200;
+}
+
+button {
+  background: none;
+  font-family: "serif";
+  font-weight: 200;
+}/*# sourceMappingURL=main.css.map */

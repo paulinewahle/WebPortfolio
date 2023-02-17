@@ -33,7 +33,7 @@ export default{
     <!-- <Transition name="fade">
       <LoadingScreen v-if="isLoading == true"/>
     </Transition> -->
-    <!-- <Header></Header> -->
+    <Header></Header>
     <main>
     <div class="homeView startView">
       
@@ -47,10 +47,10 @@ Design &
     </div>
     <div class="homeView" id="navView">
       
-      <router-link to="/work">
+      <router-link  to="/work">
         work
       </router-link>
-      <router-link to="/about">
+      <router-link  to="/about">
         about
       </router-link>
     </div>
@@ -83,10 +83,25 @@ Design &
       border: 1px solid blueviolet;
       scroll-snap-align: start;
     }
-    .navView{
-      z-index: 3000000;
+    #navView{
       border: 1px solid red;
-      color: #eeeeee;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      z-index: 50000000;
+    }
+    #navView a{
+    display: inline-block;
+    font-size: 3em;
+    font-family: 'serif';
+    text-decoration: none;
+    margin: 4%;
+    display: fixed;
+    }
+    #navView a:hover, #navView a:focus {
+    font-style: italic;
     }
     h1{
       font-size: 12rem;
@@ -101,18 +116,15 @@ Design &
     #scrollbutton{
       /* border: none; */
       background: none;
-      border-bottom: 1px solid black;
       font-family: "Brigade", sans-serif;
       font-size: 1em;
       text-align: end;
       z-index: 500000;
     }
     #scrollbutton:hover{
-      background-color: yellow;
+      font-style: italic;   
     }
-  .link{
-      border: 1px solid red;
-  }
+
  
 }  
 </style>

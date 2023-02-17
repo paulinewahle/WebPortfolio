@@ -12,16 +12,15 @@
 <style scoped>
     header{
         position: fixed;
-        height: 10vh;
         width: 100vw;
-        padding: 2%;
+        padding: 10vh 0 0 0;
         box-sizing: border-box;
     }
     h1{
-        font-family: "Brigade", sans-serif;
+        font-family: 'serif';
         font-size: 1.5rem;
         font-style: normal;
+        font-weight: 100;
         text-align: center;
-        border-bottom: 1px solid black;
     }
 </style>
