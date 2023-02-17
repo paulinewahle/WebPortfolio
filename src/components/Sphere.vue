@@ -139,25 +139,19 @@ export default{
         ////////
         gsap.registerPlugin(ScrollTrigger); 
 
-        
-        // gsap.from(sphere,{
-      
-        //      rotationY: Math.PI,
-        //     })
-        // gsap.to(sphere,{
-        //     scrollTrigger: {
-        //     trigger: ".homeView",
-        //     markers: true,
-        //     start: "top top",
-        //     end: "bottom top",
-        //     scrub: true,
-        //     toggleActions: "restart pause reverse none"
-        // },
-        //     rotationY: Math.PI,
-        // })
-            
-        // .to('.carousel-caption .btn-primary',  {opacity: 0, x:  100, duration: 1})
-
+        gsap.to(sphere.rotation, {
+            scrollTrigger: {
+            trigger: ".startView",
+            markers: true,
+            start: "top top",
+            end: "bottom top",
+            duration: 2.5, 
+            yoyoEase: true,
+            scrub: true,
+            toggleActions: "restart pause reverse none"
+        },
+            y: Math.PI
+        });
         gsap.to(sphere.material, {
             scrollTrigger: {
             trigger: ".startView",
@@ -169,10 +163,22 @@ export default{
             scrub: true,
             toggleActions: "restart pause reverse none"
         },
-
             opacity: 1
         });
-    
+        gsap.to(".webgl", {
+            scrollTrigger: {
+            trigger: ".startView",
+            markers: true,
+            start: "top top",
+            end: "bottom top",
+            duration: 2.5, 
+            yoyoEase: true,
+            scrub: true,
+            toggleActions: "restart pause reverse none"
+        },
+            scale: 3
+        });
+        
 
         const tick = () =>
         {
@@ -180,7 +186,7 @@ export default{
             const elapsedTime = clock.getElapsedTime()
 
             // Update objects
-            sphere.rotation.y = .2 * elapsedTime
+            //sphere.rotation.y = .22 * elapsedTime
 
             // Update Orbital Controls
             // controls.update()
@@ -223,18 +229,17 @@ export default{
 body{
     margin: 0;
     padding: 0;
-    height: 100vh;
-    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid red;
 }
 .webgl{
     position: fixed;
     top: 0;
     left: 0;
     outline: none;
-    z-index: 1000;
+    z-index: 100;
 }
 
 

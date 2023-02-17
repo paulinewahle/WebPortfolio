@@ -28,7 +28,7 @@ export default{
 </script>
 
 <template>
-
+ 
   <body>
     <!-- <Transition name="fade">
       <LoadingScreen v-if="isLoading == true"/>
@@ -56,8 +56,8 @@ Design &
       </router-link>
     </div>
     </main>
-    <Sphere />
    
+    <Sphere />
 
   </body>
 
@@ -66,11 +66,9 @@ Design &
 <style scoped>
 @media (min-width: 1024px) {
     body{
-      width: 100vw;
-      height: 200vh;
+      max-height: 200vh;
     }
     main{
-      overflow-y: scroll;
       scroll-snap-type: both mandatory;
     }
     .homeView{
@@ -83,8 +81,12 @@ Design &
       align-items: center;
       justify-content: center;
       border: 1px solid blueviolet;
-      overflow-y: scroll;
-      scroll-snap-align: center;
+      scroll-snap-align: start;
+    }
+    .navView{
+      z-index: 3000000;
+      border: 1px solid red;
+      color: #eeeeee;
     }
     h1{
       font-size: 12rem;

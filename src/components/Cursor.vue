@@ -22,12 +22,12 @@ export default{
 
         let rightScreen = window.screen.width/2
         let leftScreen = window.screen.width/2
-        if(e.pageX < rightScreen){
-            console.log("left")
-        }
-        else if(e.screenX > leftScreen){
-            console.log("right")
-        }
+        // if(e.pageX < rightScreen){
+        //     console.log("left")
+        // }
+        // else if(e.screenX > leftScreen){
+        //     console.log("right")
+        // }
         }
        
         // this.links.addEventListener("mouseover", hoverLink);
