@@ -22,7 +22,7 @@ export default{
         //Loading
         const textureLoader = new THREE.TextureLoader()
 
-        const normalTexture = textureLoader.load('src/assets/textures/Options/4655-normal.jpeg')
+        const normalTexture = textureLoader.load('src/assets/textures/Options/Water_001_NORM.jpg')
 
         // Debug
         //const gui = new dat.GUI()
@@ -52,7 +52,8 @@ export default{
             reflectivity: 0.9,
             //refractionRatio: 0.985,
             //ior: 0.9,
-            normalMap: normalTexture
+            normalMap: normalTexture,
+            displacement: 1,
         })
 
         // Mesh
