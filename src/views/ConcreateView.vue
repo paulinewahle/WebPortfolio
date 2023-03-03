@@ -4,10 +4,9 @@ import PageNumberStyle from '../assets/pagenumbers.css'
 
 export default {
   props:{
-    sideNav: Array,
+    caseNav: Array,
   },
   components: {
-    CaseNav
   },
   data() {
     return {
@@ -32,12 +31,11 @@ export default {
     }
   },
   mounted(){
-    this.sideNav.push("showSideNav")
+    this.caseNav.push("hideSoMe")
+    console.log(this.caseNav)
   },
   methods:{
-    
-     
-      
+
   }
   
 }

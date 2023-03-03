@@ -18,7 +18,7 @@ export default{
     }
   },
   mounted() {
-    this.sideNav.pop("showSideNav")
+
 
     setTimeout(() => {
       this.isLoading = false;
@@ -114,15 +114,18 @@ Design &
       right: 10vw;
     }
     #scrollbutton{
-      /* border: none; */
+      position: fixed;
       background: none;
       font-family: "Brigade", sans-serif;
       font-size: 1em;
-      text-align: end;
-      z-index: 500000;
+      text-decoration: none;
+      top: 88vh;
+      left: 47vw;
+      border-bottom: 1px solid;
+      z-index: 150;
     }
     #scrollbutton:hover{
-      font-style: italic;   
+      font-style: italic;
     }
 
  

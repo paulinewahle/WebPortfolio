@@ -2,12 +2,12 @@
     export default{
       props:{
         links: Array,
-        sideNav: Array
+        // sideNav: Array
+        caseNav: Array
       },
       mounted(){
         this.links.push(document.querySelector(".link"))
       }
-      
     }
     
 
@@ -17,7 +17,7 @@
 
 <aside>
   <nav>
-  <!-- <div v-if="this.caseNav.length == 0"> -->
+  <div v-if="this.caseNav.length == 0">
     <div id="so-me">
       <a href = "mailto:abc@example.com">
         LinkedIn
@@ -32,7 +32,7 @@
         Codepen
       </a>
     </div>
-  <!-- </div> -->
+  </div>
 
     <div id="main-nav">
     <router-link to="/" id="menu-button" class="link">
@@ -75,7 +75,7 @@
       margin: .5em 0 0 0;
     }
     a:hover{
-      font-style: oblique;
+      font-style: italic;
     }
     #so-me{
       margin: 0 0 45vh 0;

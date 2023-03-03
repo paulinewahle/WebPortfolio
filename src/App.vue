@@ -9,22 +9,24 @@ import CaseNav from './components/CaseNav.vue'
 import HomeView from './views/HomeView.vue'
 
 export default {
-
+    props:{
+    caseNav: false
+    },
 	components: {
     Cursor,
     SideNav,
     CaseNav,
     HomeView,
     WorkView
-},
+    },
     data(){
         return{
             links: [],
             sideNav: [],
+            caseNav: []
         }
     },
     mounted(){
-        
     }
 }
 
@@ -35,15 +37,15 @@ export default {
     <body>
 
         <!-- consitional rendering deactivated maouse effect -->
-        <!-- <SideNav :links="links" v-if="this.sideNav.length === 1" /> -->
+        <!-- <SideNav :links="links" v-if="this.sideNav.length >= 1" /> -->
 
-        <SideNav :links="links"/>
+        <SideNav :links="links" :caseNav="caseNav"/>
         
         <!-- <SideNav  /> -->
         <Cursor :links="links"/>
 
         <!-- <Transition name="slide-fade"> -->
-        <RouterView :sideNav="sideNav">
+        <RouterView :sideNav="sideNav" :caseNav="caseNav">
            
         </RouterView>
         <!-- </Transition> -->

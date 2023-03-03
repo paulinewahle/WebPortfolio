@@ -24,7 +24,7 @@ export default {
     }
   },
   mounted(){
-    this.sideNav.push("showSideNav")
+    this.sideNav.pop("showSideNav")
   },
   methods:{
     pageNumberStyle: function(){

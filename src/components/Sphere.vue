@@ -34,7 +34,7 @@ export default{
         const scene = new THREE.Scene()
 
         // Objects
-        const geometry = new THREE.SphereGeometry( 1.1, 64, 64 );
+        const geometry = new THREE.SphereGeometry( .8, 64, 64 );
 
         // Materials
         const material = new THREE.MeshPhysicalMaterial({
@@ -232,7 +232,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid red;
 }
 .webgl{
     position: fixed;
