@@ -140,7 +140,8 @@ export default {
   }
   h1{
     margin: 10vh 0 0 3vw;
-    font-size: 15rem;
+    font-size: 7rem;
+    font-weight: 100;
     font-style: italic;
     position: fixed;
     z-index: 500;

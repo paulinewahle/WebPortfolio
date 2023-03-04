@@ -4,7 +4,7 @@
 }
 @font-face {
     font-family: "sans-serif";
-    src: url('src/assets/fonts/PPRightSans-Light.otf')  format('opentype');
+    src: url('src/assets/fonts/Ade-Display.otf')  format('opentype');
 }
 
 * {
@@ -49,12 +49,13 @@
 h1{
     /*font-family: contralto-big, sans-serif;*/
     font-family: 'sans-serif';
-    font-weight: 200;
+    //font-weight: 200;
     margin: 0;
     line-height: .8em;
     font-size: 25rem;
     z-index: 50;
-    font-style: italic;
+    // font-style: italic;
+    text-transform: uppercase;
 }
 h2{
     font-family:'serif';

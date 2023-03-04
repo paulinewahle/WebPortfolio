@@ -59,7 +59,7 @@ export default {
 
   <div id="container">
     <div id="title">
-      <h1>Wo<br>-rk</h1>
+      <h1>Wo<br>rk</h1>
     </div>
     <div id="work-img">
         <svg class="blob"  preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="100%" width="100%" id="blobSvg">
@@ -119,7 +119,10 @@ export default {
 
 <style scoped>
 @media (min-width: 1024px) {
-
+h1{
+  font-size: 15rem;
+  font-weight: 100;
+}
 /* General */
   body{
     overflow: hidden;

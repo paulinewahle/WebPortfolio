@@ -38,8 +38,9 @@ export default{
     <div class="homeView startView">
       
         <pre><h1>
-Design & 
-    Development
+          
+    Design & 
+        Development
               </h1>
         </pre>
       
@@ -104,11 +105,10 @@ Design &
     font-style: italic;
     }
     h1{
-      font-size: 12rem;
+      font-size: 7rem;
       font-weight: 200;
       line-height: 1em;
       margin: 0;
-      font-style: italic;
       position: fixed;
       top: 1vh;
       right: 10vw;
