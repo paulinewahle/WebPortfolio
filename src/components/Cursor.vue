@@ -22,12 +22,14 @@ export default{
 
         let rightScreen = window.screen.width/2
         let leftScreen = window.screen.width/2
-        // if(e.pageX < rightScreen){
-        //     console.log("left")
-        // }
-        // else if(e.screenX > leftScreen){
-        //     console.log("right")
-        // }
+        if(e.pageX < rightScreen){
+            console.log("left")
+            document.querySelector(".text-cursor").textContent = "Click Back";
+        }
+        else if(e.screenX > leftScreen){
+            console.log("right")
+            document.querySelector(".text-cursor").textContent = "Click Next";
+        }
         }
        
         // this.links.addEventListener("mouseover", hoverLink);
@@ -60,7 +62,7 @@ export default{
 
 <template>
     <div class="text-cursor">
-        <span>Next</span>
+        <span></span>
     </div>
     <div class="cursor">
         <svg class="blob" viewBox="0 0 800 500" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
@@ -90,7 +92,7 @@ export default{
         top: 0;
         width: 30px;
         height: 30px;
-        margin-top: -15px;
+        margin-top: -5px;
         margin-left: -15px;
         pointer-events: none;
         border-radius: 50%;
@@ -110,7 +112,6 @@ export default{
 
     .blob{
         position: absolute;
-
         margin-left: 50px; 
         transform: scale(1, 1);
         transform-origin: center center;
@@ -120,21 +121,22 @@ export default{
     }
 
     .text-cursor{
-        display: none;
+        display: block;
+        filter: blur(0px);
+        position: fixed;
+        transition:  all .2s ease;
+        z-index: 1001;
+        pointer-events: none;
+    }
+    .text-cursor::after{
         height: 70px;
         width: 70px;
         margin-top: -10px;
         margin-left: -15px;
         font-size: 1em;
-        filter: blur(0px);
-        position: fixed;
-        transition:  all .1s ease-in-out;
-        z-index: 1001;
-        pointer-events: none;
-        
     }
     span{
-        color: #eeeeee;
+        color: black;
     }
 
 </style>
