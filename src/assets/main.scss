@@ -4,7 +4,7 @@
 }
 @font-face {
     font-family: "sans-serif";
-    src: url('src/assets/fonts/Migha-LightSlant.otf')  format('opentype');
+    src: url('src/assets/fonts/PPRightSans-Light.otf')  format('opentype');
 }
 
 * {
@@ -54,8 +54,8 @@ h1{
     line-height: .8em;
     font-size: 25rem;
     z-index: 50;
-    // font-style: italic;
-    text-transform: uppercase;
+    font-style: italic;
+    //text-transform: uppercase;
 }
 h2{
     font-family:'serif';

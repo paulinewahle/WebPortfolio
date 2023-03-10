@@ -23,6 +23,15 @@ export default{
     setTimeout(() => {
       this.isLoading = false;
     }, 15000);
+    window.onscroll = function() {myFunction()};
+
+    function myFunction() {
+      if (document.documentElement.scrollTop < 110) {
+        document.getElementById("navLinksHome").style.display = "none";
+      } else {
+        document.getElementById("navLinksHome").style.display = "block";
+      }
+    }
   }
 }
 </script>
@@ -46,14 +55,15 @@ export default{
       
         <a href="#navView" class="link" id="scrollbutton">scroll</a>
     </div>
-    <div class="homeView" id="navView">
-      
-      <router-link  to="/work">
+    <div id="navView">
+      <div id="navLinksHome">
+      <router-link to="/work">
         work
       </router-link>
-      <router-link  to="/about">
+      <router-link to="/about">
         about
       </router-link>
+      </div>
     </div>
     </main>
    
@@ -69,11 +79,8 @@ export default{
       max-height: 200vh;
       
     }
-    main{
-      scroll-snap-type: both mandatory;
-    }
     .homeView{
-      height: 100vh;
+      height: 50vh;
       width: 100vw;
       padding: 0;
       margin: 0;
@@ -82,16 +89,18 @@ export default{
       align-items: right;
       justify-content: right;
       border: 1px solid blueviolet;
-      scroll-snap-align: start;
     }
     #navView{
       border: 1px solid red;
+      align-items: center;
+      position: fixed;
+      z-index: 50000000;
+    }
+    #navLinksHome{
+      width: 100vw;
       display: flex;
       flex-direction: row;
       justify-content: center;
-      align-items: center;
-      position: absolute;
-      z-index: 50000000;
     }
     #navView a{
     display: inline-block;
@@ -99,7 +108,6 @@ export default{
     font-family: 'serif';
     text-decoration: none;
     margin: 4%;
-    display: fixed;
     }
     #navView a:hover, #navView a:focus {
     font-style: italic;

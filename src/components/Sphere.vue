@@ -174,7 +174,7 @@ export default{
             trigger: ".startView",
             markers: true,
             start: "top top",
-            end: "bottom top",
+            end: "center top",
             duration: 2.5, 
             yoyoEase: true,
             scrub: true,
@@ -187,13 +187,13 @@ export default{
             trigger: ".startView",
             markers: true,
             start: "top top",
-            end: "bottom top",
+            end: "center top",
             duration: 2.5, 
             yoyoEase: true,
             scrub: true,
             toggleActions: "restart pause reverse none"
         },
-            scale: 3
+            scale: 4
         });
         
 

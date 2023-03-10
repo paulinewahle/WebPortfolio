@@ -5,7 +5,6 @@ export default{
         links: Array,
       },
     components: {
-        
     },
     mounted(){
 
