@@ -12,6 +12,7 @@
     "horizontal-scroll": "^1.1.0",
     "three": "^0.144.0",
     "vue": "^3.2.38",
+    "vue-anchor-router-link": "^0.8.5",
     "vue-horizontal-scroll": "^0.2.4",
     "vue-router": "^4.1.5",
     "webpack-merge": "^5.8.0"

@@ -25,7 +25,7 @@ export default{
 
     window.onscroll = function() {showHomeNav()};
     function showHomeNav() {
-      if (document.documentElement.scrollTop < 110) {
+      if (document.documentElement.scrollTop < 200) {
         document.getElementById("nav-links-home").style.display = "none";
       } else {
         document.getElementById("nav-links-home").style.display = "block";
@@ -65,7 +65,7 @@ export default{
 
       </div>
 
-      <div class="home-view nav-view">
+      <div class="home-view" id="nav-view">
         <div id="nav-links-home">
         <router-link to="/work">
           work
@@ -99,18 +99,20 @@ export default{
       justify-content: center;
       border: 1px solid blueviolet;
     }
-    .nav-view{
+    #nav-view{
       border: 1px solid red;
-      /* position: fixed; */
-      z-index: 50000000;
+      
     }
     #nav-links-home{
-      width: 100vw;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
+      position: fixed;
+      top: 45vh;
+      left: 41vw;
+      width: 30vw;
+      display: none;
+      z-index: 50000000;
     }
     #nav-view a{
+    border: 1px solid blue;
     display: inline-block;
     font-size: 3em;
     font-family: 'serif';
@@ -134,7 +136,7 @@ export default{
       font-size: 1em;
       text-decoration: none;
       top: 88vh;
-      left: 47vw;
+      left: 49vw;
       border-bottom: 1px solid;
       z-index: 150;
     }
