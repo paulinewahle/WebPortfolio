@@ -23,11 +23,11 @@ export default{
         let leftScreen = window.screen.width/2
         if(e.pageX < rightScreen){
             console.log("left")
-            document.querySelector(".text-cursor").textContent = "Click Back";
+            //document.querySelector(".text-cursor").textContent = "Click Back";
         }
         else if(e.screenX > leftScreen){
             console.log("right")
-            document.querySelector(".text-cursor").textContent = "Click Next";
+            //document.querySelector(".text-cursor").textContent = "Click Next";
         }
         }
        

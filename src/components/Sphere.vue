@@ -171,7 +171,7 @@ export default{
         });
         gsap.to(sphere.material, {
             scrollTrigger: {
-            trigger: ".startView",
+            trigger: ".start-view",
             markers: true,
             start: "top top",
             end: "center top",
@@ -184,7 +184,7 @@ export default{
         });
         gsap.to(".webgl", {
             scrollTrigger: {
-            trigger: ".startView",
+            trigger: ".start-view",
             markers: true,
             start: "top top",
             end: "center top",
