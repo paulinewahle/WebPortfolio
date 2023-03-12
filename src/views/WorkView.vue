@@ -7,7 +7,7 @@ export default {
     links: Array,
     navLinks: Array,
     sideNav: Array, 
-    // caseNav: Array
+    caseNav: Array
   },
 
   components: {
@@ -36,7 +36,7 @@ export default {
   },
   mounted(){
       this.sideNav.push("showSideNav")
-      // this.caseNav.pop("activeCaseNav")
+      this.caseNav.push("hideSoMe")
   },
   methods:{
     revealCaseImg(image){

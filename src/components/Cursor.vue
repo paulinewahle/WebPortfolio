@@ -22,11 +22,11 @@ export default{
         let rightScreen = window.screen.width/2
         let leftScreen = window.screen.width/2
         if(e.pageX < rightScreen){
-            console.log("left")
+            //console.log("left")
             //document.querySelector(".text-cursor").textContent = "Click Back";
         }
         else if(e.screenX > leftScreen){
-            console.log("right")
+            //console.log("right")
             //document.querySelector(".text-cursor").textContent = "Click Next";
         }
         }
@@ -35,7 +35,6 @@ export default{
         // function hoverLink(){
         //     console.log("in")
         // }
-        console.log(this.links)
         this.links.forEach((link) => {
         link.addEventListener("mouseleave", () => {
             blob.style.scale = 0;

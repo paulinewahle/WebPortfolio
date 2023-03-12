@@ -32,14 +32,40 @@ export default {
   },
   mounted(){
     this.caseNav.push("hideSoMe")
-    console.log(this.caseNav)
-    window.onmousedown = function(){myScript};
-    function myScript(){
-      console.log("clicked");
+    let show2 = this.show2
+    
+    // window.addEventListener("mousemove", mouseFollow);
+    // function mouseFollow(e) {
+    //   window.onmousedown = function() {mouseDown()};
+    //   function mouseDown(){
+    //   let screenHalf = window.screen.width/2
+    //   if(e.pageX < screenHalf){
+    //       console.log(this.show2)
+    //       //document.querySelector(".text-cursor").textContent = "Click Back";
+    //   }
+    //   else if(e.screenX > screenHalf){
+    //       console.log("right")
+    //       //document.querySelector(".text-cursor").textContent = "Click Next";
+    //   }
+    //   }
+      
+    // }
+    window.addEventListener("click", mouseDown);
+    function mouseDown(e) {
+      let x = e.clientX;
+      let screenHalf = window.screen.width/2
+      if(x < screenHalf){
+          console.log(show2)
+          show2 = true
+        }    
+      else if(x > screenHalf){
+          console.log(show2)
+      }
     }
+    
   },
   methods:{
-   
+
   }
   
 }
