@@ -27,8 +27,10 @@ export default{
     function showHomeNav() {
       if (document.documentElement.scrollTop < 200) {
         document.getElementById("nav-links-home").style.display = "none";
+        document.getElementById("scrollbutton").style.display = "block";
       } else {
         document.getElementById("nav-links-home").style.display = "block";
+        document.getElementById("scrollbutton").style.display = "none";
       }
     }
 
@@ -97,11 +99,8 @@ export default{
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      border: 1px solid blueviolet;
     }
-    #nav-view{
-      border: 1px solid red;
-      
+    #nav-view{ 
     }
     #nav-links-home{
       position: fixed;
@@ -112,7 +111,6 @@ export default{
       z-index: 50000000;
     }
     #nav-view a{
-    border: 1px solid blue;
     display: inline-block;
     font-size: 3em;
     font-family: 'serif';

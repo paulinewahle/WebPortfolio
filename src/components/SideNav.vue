@@ -1,9 +1,8 @@
 <script>
-import VueScrollTo from 'vue-scrollto'
+
 
   export default{
     components: {
-      VueScrollTo
     },
     props:{
       links: Array,
@@ -39,9 +38,9 @@ import VueScrollTo from 'vue-scrollto'
 
     <div id="main-nav">
 
-    <router-link to="/" v-scroll-to="'#nav-view'" id="menu-button" class="link">
+    <a href="/#nav-view" id="menu-button" class="link">
       Menu
-    </router-link> 
+    </a> 
     <h3>
       Get in touch
     </h3>

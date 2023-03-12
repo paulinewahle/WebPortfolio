@@ -4,6 +4,7 @@ import router from './router'
 import './assets/main.css'
 import'./assets/transition.css'
 
+
 const app = createApp(App)
 
 app.use(router)
