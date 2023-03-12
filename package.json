@@ -15,6 +15,7 @@
     "vue-anchor-router-link": "^0.8.5",
     "vue-horizontal-scroll": "^0.2.4",
     "vue-router": "^4.1.5",
+    "vue-scrollto": "^2.20.0",
     "webpack-merge": "^5.8.0"
   },
   "devDependencies": {

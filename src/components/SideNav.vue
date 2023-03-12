@@ -1,16 +1,19 @@
 <script>
-    export default{
-      props:{
-        links: Array,
-        // sideNav: Array
-        caseNav: Array
-      },
-      mounted(){
-        this.links.push(document.querySelector(".link"))
-      }
-    }
-    
+import VueScrollTo from 'vue-scrollto'
 
+  export default{
+    components: {
+      VueScrollTo
+    },
+    props:{
+      links: Array,
+      // sideNav: Array
+      caseNav: Array
+    },
+    mounted(){
+      this.links.push(document.querySelector(".link"))
+    }
+  }
 
 </script>
 <template>
@@ -35,7 +38,8 @@
   </div>
 
     <div id="main-nav">
-    <router-link to="/#nav-view" id="menu-button" class="link">
+
+    <router-link to="/" v-scroll-to="'#nav-view'" id="menu-button" class="link">
       Menu
     </router-link> 
     <h3>

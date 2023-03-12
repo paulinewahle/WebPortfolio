@@ -1,6 +1,4 @@
 <script>
-import HorizontalScroll from 'vue-horizontal-scroll'
-import 'vue-horizontal-scroll/dist/vue-horizontal-scroll.css'
 import SideNav from '../components/SideNav.vue'
 import PageNumberStyle from '../assets/pagenumbers.css'
 
@@ -9,7 +7,6 @@ export default {
     sideNav: Array,
   },
   components: {
-      HorizontalScroll, 
       SideNav
   },
   data() {

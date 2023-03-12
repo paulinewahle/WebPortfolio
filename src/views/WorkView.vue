@@ -1,5 +1,4 @@
 <script>
-import 'vue-horizontal-scroll/dist/vue-horizontal-scroll.css'
 import SideNav from '../components/SideNav.vue'
 import Cursor from '../components/Cursor.vue'
 
