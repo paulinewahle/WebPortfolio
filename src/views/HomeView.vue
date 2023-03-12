@@ -25,7 +25,7 @@ export default{
 
     window.onscroll = function() {showHomeNav()};
     function showHomeNav() {
-      if (document.documentElement.scrollTop < 200) {
+      if (document.documentElement.scrollTop < 300) {
         document.getElementById("nav-links-home").style.display = "none";
         document.getElementById("scrollbutton").style.display = "block";
       } else {
@@ -55,11 +55,9 @@ export default{
     <Header></Header>
     <main>
       <div class="home-view start-view">
-          
-       <h1>Design & 
-        Development
-                </h1>
-         
+        <h1>
+          Design & Development
+        </h1>
           <a href="#nav-view" class="link" id="scrollbutton">scroll</a>
           <p id="scroll-percentage">
             <span id="percent">0</span>%
@@ -96,24 +94,24 @@ export default{
       padding: 0;
       margin: 0;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
       justify-content: center;
-    }
-    #nav-view{ 
-    }
+    } 
     #nav-links-home{
       position: fixed;
       top: 45vh;
-      left: 41vw;
+      left: 36vw;
       width: 30vw;
       display: none;
       z-index: 50000000;
     }
     #nav-view a{
+    font-family: "sans-serif";
+    src: url('src/assets/fonts/Ade-Display.otf')  format('opentype');
     display: inline-block;
     font-size: 3em;
-    font-family: 'serif';
+    text-transform: uppercase;
     text-decoration: none;
     margin: 4%;
     }
@@ -121,11 +119,12 @@ export default{
     font-style: italic;
     }
     h1{
-      font-size: 7rem;
+      font-size: 6.6rem;
       font-weight: 200;
       line-height: 1em;
       margin: 0;
       position: fixed;
+      text-align: center;
     }
     #scrollbutton{
       position: fixed;

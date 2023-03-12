@@ -23,5 +23,6 @@
         font-style: normal;
         font-weight: 100;
         text-align: center;
+        text-transform: capitalize;
     }
 </style>

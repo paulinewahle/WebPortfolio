@@ -29,7 +29,9 @@ export default {
       line6: "0",
       text6: "none",
       line7: "0",
-      text7: "none"
+      text7: "none",
+      line8: "0",
+      text8: "none"
     }
   },
   mounted(){
@@ -58,7 +60,7 @@ export default {
 
   <div id="container">
     <div id="title">
-      <h1>Wo<br>rk</h1>
+      <h1>Work</h1>
     </div>
     <div id="work-img">
         <svg class="blob"  preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="100%" width="100%" id="blobSvg">
@@ -79,14 +81,14 @@ export default {
   </div>
     <div id="work-links">
           <router-link to="/concreate" href="" class="work-link" @mouseover='revealCaseImg("src/assets/cases/concreate/Zine1.jpg"); text1 = "inline"; line1 = "9em"' @mouseleave="hideCaseImg(); text1 = 'none'; line1 = '0'">
-            <h2>Concreate</h2> 
+            <h2>Gamél</h2> 
             <div class="line" :style="{ 'width': line1 }"></div>
-            <h2 :style="{ 'display': text1}">Graphic Design</h2>
+            <h2 :style="{ 'display': text1}">Web Design</h2>
           </router-link>
           <router-link to="/concreate" href="" class="work-link" @mouseover='revealCaseImg("src/assets/cases/concreate/Zine6.jpg"); text2 = "inline"; line2 = "9em"' @mouseleave="hideCaseImg(); text2 = 'none'; line2 = '0'">
-            <h2>Concreate</h2> 
+            <h2>HiTech</h2> 
             <div class="line" :style="{ 'width': line2 }"></div>
-            <h2 :style="{ 'display': text2}">Graphic Design</h2>
+            <h2 :style="{ 'display': text2}">Web Design</h2>
           </router-link>
           <router-link to="/concreate" href="" class="work-link" @mouseover='revealCaseImg("src/assets/cases/concreate/Zine1.jpg"); text3 = "inline"; line3 = "9em"' @mouseleave="hideCaseImg(); text3 = 'none'; line3 = '0'">
             <h2>Concreate</h2> 
@@ -94,21 +96,30 @@ export default {
             <h2 :style="{ 'display': text3}">Graphic Design</h2>
           </router-link>
           <router-link to="/concreate" href="" class="work-link" @mouseover='revealCaseImg("src/assets/cases/concreate/Zine1.jpg"); text4 = "inline"; line4 = "9em"' @mouseleave="hideCaseImg(); text4 = 'none'; line4 = '0'">
-            <h2>Concreate</h2> 
+            <h2>Skilled</h2> 
             <div class="line" :style="{ 'width': line4 }"></div>
-            <h2 :style="{ 'display': text4}">Graphic Design</h2>
+            <h2 :style="{ 'display': text4}">UI Design</h2>
           </router-link>
           <router-link to="/concreate" href="" class="work-link" @mouseover='revealCaseImg("src/assets/cases/concreate/Zine1.jpg"); text5 = "inline"; line5 = "9em"' @mouseleave="hideCaseImg(); text5 = 'none'; line5 = '0'">
-            <h2>Concreate</h2> 
+            <h2>ToDo</h2> 
             <div class="line" :style="{ 'width': line5 }"></div>
-            <h2 :style="{ 'display': text5}">Graphic Design</h2>
+            <h2 :style="{ 'display': text5}">Client-Server Code</h2>
           </router-link>
           <router-link to="/concreate" href="" class="work-link" @mouseover='revealCaseImg("src/assets/cases/concreate/Zine1.jpg"); text6 = "inline"; line6 = "9em"' @mouseleave="hideCaseImg(); text6 = 'none'; line6 = '0'">
-            <h2>Concreate</h2> 
+            <h2>Baio</h2> 
             <div class="line" :style="{ 'width': line6 }"></div>
-            <h2 :style="{ 'display': text6}">Graphic Design</h2>
+            <h2 :style="{ 'display': text6}">Brand & UI Design</h2>
           </router-link>
-         
+          <router-link to="/concreate" href="" class="work-link" @mouseover='revealCaseImg("src/assets/cases/concreate/Zine1.jpg"); text7 = "inline"; line7 = "9em"' @mouseleave="hideCaseImg(); text7 = 'none'; line7 = '0'">
+            <h2>Sticky Notes</h2> 
+            <div class="line" :style="{ 'width': line7 }"></div>
+            <h2 :style="{ 'display': text7}"> Client-Server Code </h2>
+          </router-link>
+          <router-link to="/concreate" href="" class="work-link" @mouseover='revealCaseImg("src/assets/cases/concreate/Zine1.jpg"); text8 = "inline"; line8 = "9em"' @mouseleave="hideCaseImg(); text8 = 'none'; line8 = '0'">
+            <h2>Nio Gin</h2> 
+            <div class="line" :style="{ 'width': line8 }"></div>
+            <h2 :style="{ 'display': text8}"> Brand & Package Design </h2>
+          </router-link>
     </div>
     
   </div>
@@ -118,25 +129,20 @@ export default {
 
 <style scoped>
 @media (min-width: 1024px) {
-h1{
-  font-size: 15rem;
-  font-weight: 100;
-}
 /* General */
   body{
-    overflow: hidden;
-    background-color: white;
+    overflow-y: hidden;
   }
   #container{
     width: 100vw;
     height: 100vh;
     display: flex;
     align-items: center;
-    padding: 0 0 0 20vw;
+    padding: 0 0 0 5vw;
   }
   #work-links{
     box-sizing: border-box;
-    width: 60vw;
+    width: 80vw;
     height: 100vh;
     padding: 10vh 0 10vh 0;
     display: flex;
@@ -166,7 +172,7 @@ h1{
     #work-img{
     position: absolute;
     box-sizing: border-box;
-    margin-left: 45vw;
+    margin-left: 60vw;
     height: 100vh;
     width: 35vw;
     background-position: center center;

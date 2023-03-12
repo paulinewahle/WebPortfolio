@@ -33,9 +33,13 @@ export default {
   mounted(){
     this.caseNav.push("hideSoMe")
     console.log(this.caseNav)
+    window.onmousedown = function(){myScript};
+    function myScript(){
+      console.log("clicked");
+    }
   },
   methods:{
-
+   
   }
   
 }
@@ -142,7 +146,6 @@ export default {
     margin: 10vh 0 0 3vw;
     font-size: 10rem;
     font-weight: 100;
-    font-style: italic;
     position: fixed;
     z-index: 500;
   }
