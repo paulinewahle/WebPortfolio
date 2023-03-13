@@ -4,15 +4,14 @@ import PageNumberStyle from '../assets/pagenumbers.css'
 
 export default {
   props:{
-    sideNav: Array,
+    
   },
   components: {
-      SideNav
   },
   data() {
     return {
-      show0: true,
-      show1: false,
+      show1: true,
+      show2: false,
       width1: "40%",
       width2: "40%",
       width3: "40%",
@@ -21,20 +20,47 @@ export default {
     }
   },
   mounted(){
-    this.sideNav.pop("showSideNav")
+    let container = document.querySelector("#container")
+    document.querySelector(".text-cursor").style.display = "block"
+
+    const mouseDown = (e) => {
+        let x = e.clientX;
+        let screenHalf = window.screen.width/2
+        if(x < screenHalf){
+          if(this.show1 === true){
+            this.show1 = false,
+            this.show2 = true
+          }
+          else if(this.show2 === true){
+            this.show2 = false,
+            this.show1 = true
+          }
+        }
+        else if(x > screenHalf){
+          if(this.show1 === true){
+            this.show1 = false,
+            this.show2 = true
+          }
+          else if(this.show2 === true){
+            this.show2 = false,
+            this.show1 = true
+          }
+        }           
+    }
+    window.addEventListener("click", mouseDown);
   },
   methods:{
     pageNumberStyle: function(){
     console.log(this.show)
-    if(this.show0 === true){
-      document.querySelector("#page-number-0").style.fontStyle= "oblique";
-      document.querySelector("#page-number-0").style.fontWeight= "700";
-      document.querySelector("#page-number-0").style.border= "1px solid red";
+    if(this.show1 === true){
+      document.querySelector("#page-number-1").style.fontStyle= "oblique";
+      document.querySelector("#page-number-1").style.fontWeight= "700";
+      document.querySelector("#page-number-1").style.border= "1px solid red";
     }
-    else if(this.show1 === true){
-      document.querySelector("#page-number-0").style.fontStyle= "normal";
-      document.querySelector("#page-number-0").style.margin= "0 0 0 5%";
-      document.querySelector("#page-number-0").style.border= "1px solid yellow";
+    else if(this.show2 === true){
+      document.querySelector("#page-number-2").style.fontStyle= "normal";
+      document.querySelector("#page-number-2").style.margin= "0 0 0 5%";
+      document.querySelector("#page-number-2").style.border= "1px solid yellow";
     }
     }
     
@@ -52,8 +78,8 @@ export default {
   <Nav></Nav>
   <div id="container">
     <Transition name="slide-fade">
-    <div v-if="show0" class="page" id="page1">
-      <h1>Ab-<br>out</h1>
+    <div v-if="show1" class="page" id="page1">
+      <h1>About</h1>
       <div id="profile-img">
         <svg class="blob"  preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="100%" width="100%" id="blobSvg">
         <path  id="d" fill="black">
@@ -73,11 +99,11 @@ export default {
     </div>
     </Transition>
     <Transition name="slide-fade">
-    <div v-if="show1" class="page" id="page2">
+    <div v-if="show2" class="page" id="page2">
       <div id="about-me">
         <h2>about me </h2>
         <p>
-          Hello, I’m Pauline Wahle - a creative designer and developer. Coming from a German degree in graphic and object design, I continued to focus on digital spaces with studies in user experience and front-end development. Always considering usability aspects, I find it fascinating to explore and reimagine digital spaces in new ways that surprise, entertain, simplify and create lasting impressions. By taking opportunities to establish original ideas, each design can get a unique look and feel. With a wholistic design sense of shape and space from experience in both disciplines, the lines between conventional and interactive design are blurry, both can profit from each other. My basis for both design and development is <b> creative thinking</b>, to stay flexible, keep moving and find alternative paths.  
+          Hello, I’m Pauline Wahle - creative designer and developer.<br> Coming from a German degree in graphic and object design, I continued to focus on digital spaces with studies in user experience and front-end development. Always considering usability aspects, I find it fascinating to explore and reimagine digital spaces in new ways that surprise, entertain, simplify and create lasting impressions. By taking opportunities to establish original ideas, each design can get a unique look and feel. With a wholistic design sense of shape and space from experience in both disciplines, the lines between conventional and interactive design are blurry, both can profit from each other. My basis for both design and development is <b> creative thinking</b>, to stay flexible, keep moving and find alternative paths.  
         </p> 
       </div>
       <div id="about-my">
@@ -116,8 +142,8 @@ export default {
 
     </Transition>
     <div id="page-numbers">
-      <button @click="this.show0 = true; this.show1 = false;" id="page-number-0">0</button>
-      <button @click="this.show0 = false; this.show1 = true;" id="page-number-1">1</button>
+      <button @click="this.show1 = true; this.show2 = false;" id="page-number-1">1</button>
+      <button @click="this.show1 = false; this.show2 = true;" id="page-number-2">2</button>
     </div>
   </div>
 </body>
@@ -126,34 +152,17 @@ export default {
 <style scoped>
 @media (min-width: 1024px) {
 
-/* Slide Page Animation */
-.slide-fade-enter-active {
-  transition: all 1s cubic-bezier(1, 0.5, 0.8, 1);
-}
-
-.slide-fade-leave-active {
-  transition: all 1s cubic-bezier(1, 0.5, 0.8, 1);
-}
-
-.slide-fade-enter-from{
-  transform: translateX(100vw);
-  opacity: 0;
-}
-.slide-fade-leave-to {
-  transform: translateX(-100vw);
-  opacity: 0;
-}
 /* General */
   body{
     overflow: hidden;
-    background-color: white;
   }
   
   #container{
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
     display: flex;
-    align-items: center;
+    padding: 0 0 0 5vw;
+    border: 1px solid;
   }
   .page{
     height: 100vh;
@@ -163,13 +172,11 @@ export default {
   }
   #page1{
     position: absolute;
-    box-sizing: border-box;
-    padding: 0 0 0 20vw;
   }
   /* Profile Image Animation */
   #profile-img{
     box-sizing: border-box;
-    margin-left: 10vw;
+    margin-left: 35vw;
     height: 100vh;
     width: 35vw;
     background-image: url("src/assets/img/profile.jpg");
@@ -190,7 +197,6 @@ export default {
 
   h1{
     line-height: .8em;
-    font-size: 25rem;
     z-index: 50;
     font-style: italic;
   }
@@ -224,12 +230,18 @@ export default {
     margin: 0 0 0 25vw;
   }
 
-  #about-me, #about-my{
+  #about-me{
     display: block;
     height: 80vh;
-    width: 20vw;
+    width: 30vw;
+    text-align: justify;
+  text-justify: inter-word;
+  }
+  #about-my{
+    display: block;
+    height: 80vh;
+    width: 25vw;
     box-sizing: border-box;
-
   }
   #about-me{
     padding-right: 2.5vw;

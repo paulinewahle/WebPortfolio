@@ -32,8 +32,8 @@ export default {
   },
   mounted(){
     this.caseNav.push("hideSoMe")
-    console.log(this.show2)
     
+
     document.querySelector(".text-cursor").style.display = "block";
 
     const mouseDown = (e) => {

@@ -37,7 +37,6 @@ export default{
             mouseCursor.style.backgroundColor = "black";
             document.getElementById("d").style.fill = "black";
             mouseCursor.style.mixBlendMode = "normal";
-            document.querySelector(".text-cursor").style.display = "block";
 
         });
         link.addEventListener("mouseover", () => {
@@ -46,7 +45,7 @@ export default{
             mouseCursor.style.backgroundColor = "white";
             document.getElementById("d").style.fill = "white";
             mouseCursor.style.mixBlendMode = "difference";
-            document.querySelector(".text-cursor").style.display = "none";
+            textCursor.style.display = "none";
 
         });
         });

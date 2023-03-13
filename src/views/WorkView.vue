@@ -81,7 +81,7 @@ export default {
         </path>
       </svg>
   </div>
-    <div id="work-links">
+  <div id="work-links">
           <router-link to="/concreate" href="" class="work-link" @mouseover='revealCaseImg("src/assets/cases/concreate/Zine1.jpg"); text1 = "inline"; line1 = "9em"' @mouseleave="hideCaseImg(); text1 = 'none'; line1 = '0'">
             <h2>Gamél</h2> 
             <div class="line" :style="{ 'width': line1 }"></div>

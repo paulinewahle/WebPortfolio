@@ -7,6 +7,7 @@ import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader.js';
 import { mergeWithCustomize } from 'webpack-merge';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { vShow } from 'vue';
 
 
 
@@ -22,7 +23,7 @@ export default{
         //Loading
         const textureLoader = new THREE.TextureLoader()
 
-        const normalTexture = textureLoader.load('src/assets/textures/Options/Water_001_NORM.jpg')
+        const normalTexture = textureLoader.load('src/assets/textures/Options/4655-normal1.jpeg')
 
         // Debug
         //const gui = new dat.GUI()
@@ -34,20 +35,19 @@ export default{
         const scene = new THREE.Scene()
 
         // Objects
-        const geometry = new THREE.SphereGeometry( .8, 64, 64 );
+        const geometry = new THREE.SphereGeometry( .8, 100, 100 );
 
         // Materials
         const material = new THREE.MeshPhysicalMaterial({
             color: new THREE.Color(0xffffff),
             //emissive: new THREE.Color(0x707070),
-            //wireframe: true,
             metalness: 1,
             roughness: 0,
             envMapIntensity: 0.9,
             clearcoat: 1,
             clearcoatRoughness: 0,
             transparent: true,
-            //transmission: .95,
+            //transmission: .5,
             opacity: .7,
             reflectivity: 0.1,
             //refractionRatio: 0.985,
@@ -178,7 +178,7 @@ export default{
             scrub: true,
             toggleActions: "restart pause reverse none"
         },
-            opacity: 1
+            opacity: 1,
         });
         gsap.to(".webgl", {
             scrollTrigger: {
@@ -188,14 +188,12 @@ export default{
             duration: 2.5, 
             yoyoEase: true,
             scrub: true,
-            toggleActions: "restart pause reverse none"
+            toggleActions: "restart pause reverse none",
+
         },
             scale: 4
         });
         
-
-        
-
         // requestAnimationFrame(animate);
         // renderer.render(scene, camera);
     
