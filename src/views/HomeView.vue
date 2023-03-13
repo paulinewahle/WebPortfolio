@@ -18,6 +18,7 @@ export default{
     }
   },
   mounted() {
+    document.querySelector(".text-cursor").style.display = "none";
 
     setTimeout(() => {
       this.isLoading = false;

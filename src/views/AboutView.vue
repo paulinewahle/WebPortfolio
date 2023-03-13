@@ -77,9 +77,7 @@ export default {
       <div id="about-me">
         <h2>about me </h2>
         <p>
-        Hi, it’s Pauline. <br>
-        German, living in Sweden, I am a graphic designer, web developer and everything in-between. With a focus on digital interfaces, I orientate my skills and perspectives towards ever new ways of crafting impressions.
-        I take opportunities to establish original ideas and to find new ways of building well understood experiences that are being remembered for their unique look and feel.
+          Hello, I’m Pauline Wahle - a creative designer and developer. Coming from a German degree in graphic and object design, I continued to focus on digital spaces with studies in user experience and front-end development. Always considering usability aspects, I find it fascinating to explore and reimagine digital spaces in new ways that surprise, entertain, simplify and create lasting impressions. By taking opportunities to establish original ideas, each design can get a unique look and feel. With a wholistic design sense of shape and space from experience in both disciplines, the lines between conventional and interactive design are blurry, both can profit from each other. My basis for both design and development is <b> creative thinking</b>, to stay flexible, keep moving and find alternative paths.  
         </p> 
       </div>
       <div id="about-my">

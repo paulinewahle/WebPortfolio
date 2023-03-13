@@ -35,8 +35,10 @@ export default {
     }
   },
   mounted(){
-      this.sideNav.push("showSideNav")
-      this.caseNav.push("hideSoMe")
+    document.querySelector(".text-cursor").style.display = "none";
+
+    this.sideNav.push("showSideNav")
+    this.caseNav.push("hideSoMe")
   },
   methods:{
     revealCaseImg(image){

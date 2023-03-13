@@ -22,19 +22,13 @@ export default{
         let rightScreen = window.screen.width/2
         let leftScreen = window.screen.width/2
         if(e.pageX < rightScreen){
-            //console.log("left")
-            //document.querySelector(".text-cursor").textContent = "Click Back";
+            document.querySelector(".text-cursor").textContent = "Back";
         }
         else if(e.screenX > leftScreen){
-            //console.log("right")
-            //document.querySelector(".text-cursor").textContent = "Click Next";
+            document.querySelector(".text-cursor").textContent = "Next";
         }
         }
        
-        // this.links.addEventListener("mouseover", hoverLink);
-        // function hoverLink(){
-        //     console.log("in")
-        // }
         this.links.forEach((link) => {
         link.addEventListener("mouseleave", () => {
             blob.style.scale = 0;
@@ -43,6 +37,8 @@ export default{
             mouseCursor.style.backgroundColor = "black";
             document.getElementById("d").style.fill = "black";
             mouseCursor.style.mixBlendMode = "normal";
+            document.querySelector(".text-cursor").style.display = "block";
+
         });
         link.addEventListener("mouseover", () => {
             blob.style.scale = 8;
@@ -50,6 +46,8 @@ export default{
             mouseCursor.style.backgroundColor = "white";
             document.getElementById("d").style.fill = "white";
             mouseCursor.style.mixBlendMode = "difference";
+            document.querySelector(".text-cursor").style.display = "none";
+
         });
         });
     },
@@ -71,7 +69,7 @@ export default{
             M392.5,314.5Q379,379,314.5,394.5Q250,410,186.5,393.5Q123,377,116.5,313.5Q110,250,103,173Q96,96,173,73Q250,50,323,77Q396,104,401,177Q406,250,392.5,314.5Z;                                                    
             M394.5,309Q368,368,309,361Q250,354,178,374Q106,394,115,322Q124,250,112.5,175.5Q101,101,175.5,81Q250,61,297.5,108Q345,155,383,202.5Q421,250,394.5,309Z;
             M432,307Q364,364,307,427.5Q250,491,214.5,406Q179,321,161.5,285.5Q144,250,148,201Q152,152,201,138Q250,124,293,144Q336,164,418,207Q500,250,432,307Z
-                                                                ">
+            ">
             </animate>
             </path>
         </svg>
@@ -90,10 +88,9 @@ export default{
         top: 0;
         width: 30px;
         height: 30px;
-        margin-top: -5px;
+        margin-top: -15px;
         margin-left: -15px;
         pointer-events: none;
-        border-radius: 50%;
         display: flex;
         justify-content: center;
         background-color: black;
@@ -125,13 +122,10 @@ export default{
         transition:  all .2s ease;
         z-index: 1001;
         pointer-events: none;
-    }
-    .text-cursor::after{
-        height: 70px;
-        width: 70px;
-        margin-top: -10px;
-        margin-left: -15px;
-        font-size: 1em;
+        font-size: 20px;
+        font-style: italic;
+        color: black;
+        
     }
     span{
         color: black;

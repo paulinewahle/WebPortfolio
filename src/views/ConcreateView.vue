@@ -32,37 +32,75 @@ export default {
   },
   mounted(){
     this.caseNav.push("hideSoMe")
-    let show2 = this.show2
+    console.log(this.show2)
     
-    // window.addEventListener("mousemove", mouseFollow);
-    // function mouseFollow(e) {
-    //   window.onmousedown = function() {mouseDown()};
-    //   function mouseDown(){
-    //   let screenHalf = window.screen.width/2
-    //   if(e.pageX < screenHalf){
-    //       console.log(this.show2)
-    //       //document.querySelector(".text-cursor").textContent = "Click Back";
-    //   }
-    //   else if(e.screenX > screenHalf){
-    //       console.log("right")
-    //       //document.querySelector(".text-cursor").textContent = "Click Next";
-    //   }
-    //   }
-      
-    // }
-    window.addEventListener("click", mouseDown);
-    function mouseDown(e) {
-      let x = e.clientX;
-      let screenHalf = window.screen.width/2
-      if(x < screenHalf){
-          console.log(show2)
-          show2 = true
-        }    
-      else if(x > screenHalf){
-          console.log(show2)
-      }
+    document.querySelector(".text-cursor").style.display = "block";
+
+    const mouseDown = (e) => {
+        let x = e.clientX;
+        let screenHalf = window.screen.width/2
+        if(x < screenHalf){
+          if(this.show1 === true){
+            this.show1 = false,
+            this.show7 = true
+          }
+          else if(this.show2 === true){
+            this.show2 = false,
+            this.show1 = true
+          }
+          else if(this.show3 === true){
+            this.show3 = false,
+            this.show2 = true
+          }
+          else if(this.show4 === true){
+            this.show4 = false,
+            this.show3 = true
+          }
+          else if(this.show5 === true){
+            this.show5 = false,
+            this.show4 = true
+          }
+          else if(this.show6 === true){
+            this.show6 = false,
+            this.show5 = true
+          }
+          else if(this.show7 === true){
+            this.show7 = false,
+            this.show6 = true
+          }
+        }
+        else if(x > screenHalf){
+          if(this.show1 === true){
+            this.show1 = false,
+            this.show2 = true
+          }
+          else if(this.show2 === true){
+            this.show2 = false,
+            this.show3 = true
+          }
+          else if(this.show3 === true){
+            this.show3 = false,
+            this.show4 = true
+          }
+          else if(this.show4 === true){
+            this.show4 = false,
+            this.show5 = true
+          }
+          else if(this.show5 === true){
+            this.show5 = false,
+            this.show6 = true
+          }
+          else if(this.show6 === true){
+            this.show6 = false,
+            this.show7 = true
+          }
+          else if(this.show7 === true){
+            this.show7 = false,
+            this.show1 = true
+          }
+        }           
     }
-    
+    window.addEventListener("click", mouseDown);
   },
   methods:{
 
@@ -125,11 +163,7 @@ export default {
       <div alt="zine-image" class="img cover-img" :style="{'background-image':img7}"></div>
     </div>
     </Transition>
-    <Transition name="slide-fade">
-    <div v-if="show8" class="page" id="page8">
-      
-    </div>
-    </Transition>
+
     
     
     <div id="page-numbers">

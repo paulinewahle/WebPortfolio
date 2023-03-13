@@ -97,10 +97,11 @@ export default {
     }
   }
   .a{
-    font-family: "Brigade", sans-serif;
+    font-family: "sans-serif";
+    src: url('src/assets/fonts/Ade-Display.otf')  format('opentype');
   }
   .b{
-    font-family: "Right Sans Light", sans-serif;
-    font-style: italic;
+    font-family: "sans-serif";
+    src: url('src/assets/fonts/Ade-Display.otf')  format('opentype');
   }
   </style>

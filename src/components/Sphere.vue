@@ -159,7 +159,6 @@ export default{
         gsap.to(sphere.rotation, {
             scrollTrigger: {
             trigger: ".startView",
-            markers: false,
             start: "top top",
             end: "bottom top",
             duration: 2.5, 
@@ -172,7 +171,6 @@ export default{
         gsap.to(sphere.material, {
             scrollTrigger: {
             trigger: ".start-view",
-            markers: false,
             start: "top top",
             end: "center top",
             duration: 2.5, 
@@ -185,7 +183,6 @@ export default{
         gsap.to(".webgl", {
             scrollTrigger: {
             trigger: ".start-view",
-            markers: true,
             start: "top top",
             end: "center top",
             duration: 2.5, 
