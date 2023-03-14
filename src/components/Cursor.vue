@@ -81,7 +81,13 @@ export default{
 
 
 <style scoped>
+@media only screen and (max-width: 768px) {
+    .cursor, .blob, .text-cursor {
+        display: none;
+    }
+}
 
+@media (min-width: 1024px) {
     .cursor {
         left: 0;
         top: 0;
@@ -126,8 +132,5 @@ export default{
         color: black;
         
     }
-    span{
-        color: black;
-    }
-
+}
 </style>

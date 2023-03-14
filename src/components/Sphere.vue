@@ -35,7 +35,7 @@ export default{
         const scene = new THREE.Scene()
 
         // Objects
-        const geometry = new THREE.SphereGeometry( .8, 100, 100 );
+        const geometry = new THREE.SphereGeometry( .8, 32, 64 );
 
         // Materials
         const material = new THREE.MeshPhysicalMaterial({
@@ -132,11 +132,34 @@ export default{
 
         //Animate
         const clock = new THREE.Clock()
+        document.addEventListener('mousemove', onDocumentMouseMove)
+
+        let mouseX = 0
+        let mouseY = 0
+
+        let targetX = 0
+        let targetY = 0
+        let targetZ = 0
+
+        const windowX = window.innerWidth / 2;
+        const windowY = window.innerHeight / 2;
+
+        function onDocumentMouseMove(event){
+            mouseX = (event.clientX - windowX)
+            mouseY = (event.clientY - windowY)
+        }
+
 
         const tick = () =>
         {
-
+            targetX = mouseX * .001;
+            targetY = mouseY * .001;
             const elapsedTime = clock.getElapsedTime()
+
+            // Update objects
+
+            sphere.rotation.y += .5 * (targetY - sphere.rotation.y)
+            sphere.rotation.x += .5 * (targetX - sphere.rotation.x)
 
             // Update objects
             //sphere.rotation.y = .22 * elapsedTime

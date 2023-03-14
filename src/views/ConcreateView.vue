@@ -32,7 +32,6 @@ export default {
   },
   mounted(){
     this.caseNav.push("hideSoMe")
-    
 
     document.querySelector(".text-cursor").style.display = "block";
 
@@ -113,8 +112,23 @@ export default {
 <template>
 <Transition name="slide-fade">
 <body>
-  
-  <div id="container">
+  <div id="responsive-container">
+    <h1>Concreate</h1>
+    <div class="resp-case-img" :style="{'background-image':img1}"/>
+    <div class="resp-case-img" :style="{'background-image':img2}"/>
+    <div class="resp-case-img" :style="{'background-image':img21}"/>
+    <video autoplay loop mute>
+        <source src="src/assets/cases/concreate/Zine5.1.mov" type="video/mp4">
+    </video>
+    <div class="resp-case-img" :style="{'background-image':img3}"/>
+    <div class="resp-case-img" :style="{'background-image':img31}"/>
+    <div class="resp-case-img" :style="{'background-image':img4}"/>
+    <div class="resp-case-img" :style="{'background-image':img5}"/>
+    <div class="resp-case-img" :style="{'background-image':img6}"/>
+    <div class="resp-case-img" :style="{'background-image':img61}"/>
+    <div class="resp-case-img" :style="{'background-image':img7}"/>
+  </div>
+  <div id="desktop-container">
     <h1>Concreate</h1>
     <Transition name="slide-fade">
     <div v-if="show1" class="page" id="page1">
@@ -182,6 +196,41 @@ export default {
 </template>
 
 <style scoped>
+@media only screen and (max-width: 768px) {
+
+  body{
+    width: 100vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  #desktop-container{
+    display: none,
+  }
+  #responsive-container{
+    padding: 30% 10%;
+  }
+  #page-numbers{
+    display: none;
+  }
+  h1{
+    position: fixed;
+    font-size: 5em;
+    z-index: 100;
+    top: 10vh;
+  }
+  p,a {
+      font-size: 2em;
+      text-decoration: none;
+  }
+  .resp-case-img, video{
+    width: 80vw;
+    height: 40vh;
+    margin: 10% 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}
 @media (min-width: 1024px) {
   
 
@@ -189,8 +238,7 @@ export default {
   body{
     overflow: hidden;
   }
-  
-  #container{
+  #desktop-container{
     width: 100vw;
     height: 100vh;
   }

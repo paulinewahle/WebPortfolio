@@ -53,6 +53,10 @@
 </template>
 
 <style scoped>
+aside{
+  display: none;
+}
+@media (min-width: 1024px) {
     aside{
       position: fixed;
       width: 20vw;
@@ -102,4 +106,5 @@
       font-style: oblique;
       border-bottom: 1px solid #292929;
     }
+}
 </style>

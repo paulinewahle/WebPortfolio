@@ -85,6 +85,21 @@ export default{
 </template>
 
 <style scoped>
+@media (max-width: 768px) {
+  body{
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    display: flex;
+    
+  }
+  h1{
+    font-size: 5rem;
+  }
+  #nav-view, #scroll-percentage, #scrollbutton{
+    display: none;
+  }
+}
 @media (min-width: 1024px) {
     body{
       max-height: 200vh;
