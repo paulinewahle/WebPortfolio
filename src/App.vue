@@ -7,6 +7,7 @@ import Cursor from './components/Cursor.vue'
 import SideNav from './components/SideNav.vue'
 import CaseNav from './components/CaseNav.vue'
 import HomeView from './views/HomeView.vue'
+import Header from './components/Header.vue'
 
 export default {
     props:{
@@ -17,7 +18,8 @@ export default {
     SideNav,
     CaseNav,
     HomeView,
-    WorkView
+    WorkView,
+    Header
     },
     data(){
         return{
@@ -38,7 +40,7 @@ export default {
 
         <!-- consitional rendering deactivated maouse effect -->
         <!-- <SideNav :links="links" v-if="this.sideNav.length >= 1" /> -->
-
+        <Header> </Header>
         <SideNav :links="links" :caseNav="caseNav"/>
         
         <!-- <SideNav  /> -->

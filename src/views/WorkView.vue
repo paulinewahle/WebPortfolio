@@ -12,7 +12,7 @@ export default {
 
   components: {
       SideNav,
-      Cursor
+      Cursor, 
   },
   data() {
     return {
@@ -59,7 +59,6 @@ export default {
 
 <template>
 <body>
-
   <div id="container">
     <div id="title">
       <h1>Work</h1>
@@ -130,7 +129,7 @@ export default {
 </template>
 
 <style scoped>
-@media (min-width: 1024px) {
+@media (min-width: 992px) {
 /* General */
   body{
     overflow-y: hidden;

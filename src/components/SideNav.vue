@@ -6,7 +6,6 @@
     },
     props:{
       links: Array,
-      // sideNav: Array
       caseNav: Array
     },
     mounted(){
@@ -18,7 +17,7 @@
 <template>
 
 <aside>
-  <nav>
+  <nav class="desktop">
   <div v-if="this.caseNav.length == 0">
     <div id="so-me">
       <a href = "mailto:abc@example.com">
@@ -53,10 +52,8 @@
 </template>
 
 <style scoped>
-aside{
-  display: none;
-}
-@media (min-width: 1024px) {
+
+@media (min-width: 992px) {
     aside{
       position: fixed;
       width: 20vw;

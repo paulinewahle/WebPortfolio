@@ -1,7 +1,6 @@
 <script lang>
 import Sphere from '../components/Sphere.vue'
 import LoadingScreen from "../components/LoadingScreen.vue"
-import Header from '../components/Header.vue'
 
 export default{
   props:{
@@ -10,7 +9,6 @@ export default{
   components: {
     Sphere,
     LoadingScreen,
-    Header
   },
   data(){
     return {
@@ -53,7 +51,6 @@ export default{
     <!-- <Transition name="fade">
       <LoadingScreen v-if="isLoading == true"/>
     </Transition> -->
-    <Header></Header>
     <main>
       <div class="home-view start-view">
         <h1>
@@ -85,7 +82,7 @@ export default{
 </template>
 
 <style scoped>
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   body{
     height: 100vh;
     width: 100vw;
@@ -100,9 +97,12 @@ export default{
     display: none;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 992px) {
     body{
       max-height: 200vh;
+    }
+    header{
+        display: block;
     }
     .home-view{
       height: 100vh;
