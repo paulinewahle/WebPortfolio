@@ -201,10 +201,7 @@ export default {
     font-style: italic;
   }
   h2{
-    font-family: "PP Right Sans", sans-serif;
     font-weight: 200;
-    font-style: italic;
-    font-size: 1.5rem;
     margin: 0 0 15% 0;
     height: 10%;
   }
