@@ -43,7 +43,6 @@
         font-size: 1rem;
     }
     h3{
-        font-family:'title';
         font-weight: bold;
         margin: 0;
         text-transform: uppercase;
@@ -66,6 +65,7 @@
     }
     .responsive{
         display: none;
+        border: 10px solid red;
     }
     * {
         cursor: none;

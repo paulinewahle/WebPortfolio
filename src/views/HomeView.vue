@@ -26,10 +26,10 @@ export default{
     function showHomeNav() {
       if (document.documentElement.scrollTop < 300) {
         document.getElementById("nav-links-home").style.display = "none";
-        document.getElementById("scrollbutton").style.display = "block";
+        document.getElementById("scrollbutton").style.opacity = "1";
       } else {
         document.getElementById("nav-links-home").style.display = "block";
-        document.getElementById("scrollbutton").style.display = "none";
+        document.getElementById("scrollbutton").style.opacity = "0";
       }
     }
 
@@ -56,22 +56,22 @@ export default{
         <h1>
           Design & Development
         </h1>
-          <a href="#nav-view" class="link" id="scrollbutton">scroll</a>
-          <p id="scroll-percentage">
+          <a href="#nav-view" class="link desktop" id="scrollbutton">scroll</a>
+          <p id="scroll-percentage" class="desktop">
             <span id="percent">0</span>%
           </p>
 
       </div>
 
-      <div class="home-view" id="nav-view">
+      <div class="home-view desktop" id="nav-view">
         <div id="nav-links-home">
-        <router-link to="/work">
-          work
-        </router-link>
-        <router-link to="/about">
-          about
-        </router-link>
-        </div>
+          <router-link to="/work">
+            work
+          </router-link>
+          <router-link to="/about">
+            about
+          </router-link>
+          </div>
       </div>
     </main>
    
@@ -82,24 +82,24 @@ export default{
 </template>
 
 <style scoped>
-@media (max-width: 992px) {
+@media (min-width: 200px) {
   body{
     height: 100vh;
     width: 100vw;
     overflow-x: hidden;
     display: flex;
-    
   }
   h1{
-    font-size: 5rem;
+    font-size: 2rem;
+    font-weight: 100;
+    position: fixed;
   }
-  #nav-view, #scroll-percentage, #scrollbutton{
-    display: none;
-  }
+  
 }
 @media (min-width: 992px) {
     body{
       max-height: 200vh;
+      overflow-y: scroll;
     }
     header{
         display: block;
@@ -136,10 +136,8 @@ export default{
     }
     h1{
       font-size: 6.6rem;
-      font-weight: 200;
       line-height: 1em;
       margin: 0;
-      position: fixed;
       text-align: center;
     }
     #scrollbutton{

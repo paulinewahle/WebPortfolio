@@ -19,7 +19,7 @@ export default {
     CaseNav,
     HomeView,
     WorkView,
-    Header
+    Header,
     },
     data(){
         return{
