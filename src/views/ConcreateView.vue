@@ -27,7 +27,6 @@ export default {
       img6: "url('src/assets/cases/concreate/Zine6.jpg')",
       img61: "url('src/assets/cases/concreate/Zine6.1.jpg')",
       img7: "url('src/assets/cases/concreate/Zine7.jpg')",
-
     }
   },
   mounted(){
@@ -112,23 +111,29 @@ export default {
 <template>
 <Transition name="slide-fade">
 <body>
-  <div id="responsive-container">
+  <div class="responsive">
     <h1>Concreate</h1>
-    <div class="resp-case-img" :style="{'background-image':img1}"/>
-    <div class="resp-case-img" :style="{'background-image':img2}"/>
-    <div class="resp-case-img" :style="{'background-image':img21}"/>
-    <video autoplay loop mute>
-        <source src="src/assets/cases/concreate/Zine5.1.mov" type="video/mp4">
-    </video>
-    <div class="resp-case-img" :style="{'background-image':img3}"/>
-    <div class="resp-case-img" :style="{'background-image':img31}"/>
-    <div class="resp-case-img" :style="{'background-image':img4}"/>
-    <div class="resp-case-img" :style="{'background-image':img5}"/>
-    <div class="resp-case-img" :style="{'background-image':img6}"/>
-    <div class="resp-case-img" :style="{'background-image':img61}"/>
-    <div class="resp-case-img" :style="{'background-image':img7}"/>
+    <div id="responsive-container">
+      <div class="resp-case-img" :style="{'background-image':img1}"/>
+      <div class="resp-case-img" :style="{'background-image':img2}"/>
+      <div class="resp-case-img" :style="{'background-image':img21}"/>
+      <video autoplay loop mute>
+          <source src="src/assets/cases/concreate/Zine5.1.mov" type="video/mp4">
+      </video>
+      <div class="resp-case-img" :style="{'background-image':img3}"/>
+      <div class="resp-case-img" :style="{'background-image':img31}"/>
+      <div class="resp-case-img" :style="{'background-image':img4}"/>
+      <div class="resp-case-img" :style="{'background-image':img5}"/>
+      <div class="resp-case-img" :style="{'background-image':img6}"/>
+      <div class="resp-case-img" :style="{'background-image':img61}"/>
+      <div class="resp-case-img" :style="{'background-image':img7}"/>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum odit, veritatis hic delectus sit, neque ab exercitationem.</p>
+      <a href="src/assets/cases/concreate/concreate.epub" download="EPUB" :style="{'z-index':'100'}"> 
+        GET E-PUBLICATION
+      </a>
+    </div>
   </div>
-  <div id="desktop-container">
+  <div class="desktop">
     <h1>Concreate</h1>
     <Transition name="slide-fade">
     <div v-if="show1" class="page" id="page1">
@@ -196,52 +201,38 @@ export default {
 </template>
 
 <style scoped>
-@media only screen and (max-width: 768px) {
+@media (min-width: 200px) {
 
   body{
-    width: 100vw;
     overflow-y: scroll;
     overflow-x: hidden;
   }
-  #desktop-container{
-    display: none,
-  }
   #responsive-container{
-    padding: 30% 10%;
+    border: 1px solid blue;
+    margin: 10vh 0;
   }
   #page-numbers{
     display: none;
   }
   h1{
     position: fixed;
-    font-size: 5em;
     z-index: 100;
-    top: 10vh;
+    top: 50vh;
+    text-align: center;
+    width: 84vw;
   }
-  p,a {
-      font-size: 2em;
-      text-decoration: none;
-  }
+
   .resp-case-img, video{
-    width: 80vw;
-    height: 40vh;
+    width: 100%;
+    height: 50vh;
     margin: 10% 0;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 992px) {
   
-
-/* General */
-  body{
-    overflow: hidden;
-  }
-  #desktop-container{
-    width: 100vw;
-    height: 100vh;
-  }
   .page{
     position: absolute;
     height: 100%;
@@ -251,10 +242,9 @@ export default {
     box-sizing: border-box;
   }
   h1{
-    margin: 10vh 0 0 3vw;
+    top: 10vh;
+    left: 3vw;
     font-size: 10rem;
-    font-weight: 100;
-    position: fixed;
     z-index: 500;
   }
   #descr{
@@ -282,11 +272,13 @@ export default {
   .landscape-img{
     width: 60vw;
   }
-  .profile-img{
+  .profile-img, video{
     width: 20vw;
     margin-left: 1vw;
   }
-
+  #page-numbers{
+    display: block;
+  }
 
   
 }

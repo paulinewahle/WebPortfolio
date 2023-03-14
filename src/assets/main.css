@@ -4,22 +4,56 @@
   @import url("https://use.typekit.net/zxi1huv.css");
 }
 @font-face {
-  font-family: "sans-serif";
+  font-family: "title";
   src: url("src/assets/fonts/Ade-Display.otf") format("opentype");
 }
-@media (max-width: 992px) {
+@media (min-width: 200px) {
   .desktop {
     display: none;
   }
   .responsive {
-    display: inline-block;
+    display: block;
   }
   body {
-    width: 100vw;
-    padding: 5%;
+    background-color: white;
+    width: 90vw;
+    padding: 3vw;
     margin: 0;
     box-sizing: border-box;
     overflow-x: hidden;
+  }
+  * {
+    color: #292929;
+    font-family: "serif";
+  }
+  h1 {
+    text-transform: uppercase;
+    font-family: "title";
+    font-weight: 100;
+    margin: 0;
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-family: "serif";
+    font-weight: 200;
+    margin: 0;
+  }
+  h3 {
+    font-family: "serif";
+    font-weight: bold;
+    margin: 0;
+    text-transform: uppercase;
+  }
+  a, p {
+    font-family: "serif";
+    font-weight: 200;
+    font-size: 1.5em;
+  }
+  a, button {
+    background: none;
+    font-family: "serif";
+    font-weight: 200;
+    border-bottom: 1px solid black;
   }
 }
 @media (min-width: 992px) {
@@ -30,77 +64,61 @@
     display: none;
   }
   * {
-    color: #292929;
     cursor: none;
     -ms-overflow-style: none;
     scrollbar-width: none;
     scroll-behavior: smooth;
-    font-family: "serif";
   }
   *::-moz-selection {
     background-color: #292929;
-    color: #eeeeee;
+    color: white;
   }
   *::selection {
     background-color: #292929;
-    color: #eeeeee;
+    color: white;
   }
   *::-moz-selection {
     background-color: #292929;
-    color: #eeeeee;
+    color: white;
   }
   *::-o-selection {
     background-color: #292929;
-    color: #eeeeee;
+    color: white;
   }
   *::-ms-selection {
     background-color: #292929;
-    color: #eeeeee;
+    color: white;
   }
   *::-webkit-selection {
     background-color: #292929;
-    color: #eeeeee;
+    color: white;
   }
   *::-webkit-scrollbar {
     display: none;
   }
   body {
-    background-color: white;
     color: #292929;
     margin: 0;
     padding: 0;
     height: 100vh;
+    width: 100vw;
   }
   h1 {
-    margin: 0;
     line-height: 0.8em;
     font-size: 6rem;
     z-index: 50;
-    text-transform: uppercase;
-    font-family: "sans-serif";
-    font-weight: 100;
   }
   h2 {
-    font-family: "serif";
-    font-weight: 200;
     font-size: 2rem;
     margin: 0;
   }
   h3 {
-    font-family: "serif";
-    font-weight: bold;
     font-size: 1rem;
-    text-transform: uppercase;
-    color: #292929;
   }
-  p {
-    font-family: "serif";
-    font-weight: 200;
+  a, p {
     font-size: 1em;
   }
-  button {
-    background: none;
-    font-family: "serif";
-    font-weight: 200;
+  a {
+    border: none;
   }
 }/*# sourceMappingURL=main.css.map */
